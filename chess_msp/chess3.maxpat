@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 26.0, 85.0, 1468.0, 713.0 ],
+		"rect" : [ 34.0, 77.0, 1468.0, 713.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,12 +38,128 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"format" : 6,
+					"id" : "obj-23",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1188.0, 758.166626, 50.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-25",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "signal" ],
+					"patching_rect" : [ 1094.166626, 758.166626, 90.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 30.0, 30.0, 100.0, 22.0 ],
+					"style" : "",
+					"text" : "freqshift~ 2000"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-20",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 530.833313, 743.166626, 50.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-22",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "signal" ],
+					"patching_rect" : [ 436.999969, 743.166626, 88.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 30.0, 30.0, 100.0, 22.0 ],
+					"style" : "",
+					"text" : "freqshift~ -200"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-18",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 868.0, 743.166626, 50.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "signal" ],
+					"patching_rect" : [ 774.166626, 743.166626, 84.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 15.0, 15.0, 100.0, 22.0 ],
+					"style" : "",
+					"text" : "freqshift~ 200"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-17",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 205.5, 743.166626, 50.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "signal" ],
+					"patching_rect" : [ 109.666656, 743.166626, 84.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 0.0, 100.0, 22.0 ],
+					"style" : "",
+					"text" : "freqshift~ 400"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-203",
 					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 43.666656, 69.0, 86.333344, 62.0 ],
+					"patching_rect" : [ 43.666656, 69.0, 89.0, 62.0 ],
 					"style" : "",
 					"text" : "use random numbers to simulate move for now"
 				}
@@ -68,23 +184,23 @@
 						"clips" : [ 							{
 								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\802__bdu__closehatac.aiff",
 								"filekind" : "audiofile",
-								"selection" : [ 0.0, 1.0 ],
+								"selection" : [ 0.028846, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
 									"mode" : [ "basic" ],
-									"followglobaltempo" : [ 0 ],
-									"speed" : [ 1.0 ],
-									"originaltempo" : [ 120.0 ],
-									"quality" : [ "basic" ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
 									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
+									"quality" : [ "basic" ],
 									"pitchcorrection" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"basictuning" : [ 440 ],
+									"speed" : [ 1.0 ],
+									"followglobaltempo" : [ 0 ],
+									"formantcorrection" : [ 0 ],
 									"originallengthms" : [ 0.0 ],
+									"timestretch" : [ 0 ],
+									"originallength" : [ 0.0, "ticks" ],
+									"originaltempo" : [ 120.0 ],
+									"formant" : [ 1.0 ],
 									"slurtime" : [ 0.0 ]
 								}
 
@@ -133,23 +249,23 @@
 						"clips" : [ 							{
 								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\ollieollie__distorted-bass-drum.wav",
 								"filekind" : "audiofile",
-								"selection" : [ 0.0, 1.0 ],
+								"selection" : [ 0.028846, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
 									"mode" : [ "basic" ],
-									"followglobaltempo" : [ 0 ],
-									"speed" : [ 1.0 ],
-									"originaltempo" : [ 120.0 ],
-									"quality" : [ "basic" ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
 									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
+									"quality" : [ "basic" ],
 									"pitchcorrection" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"basictuning" : [ 440 ],
+									"speed" : [ 1.0 ],
+									"followglobaltempo" : [ 0 ],
+									"formantcorrection" : [ 0 ],
 									"originallengthms" : [ 0.0 ],
+									"timestretch" : [ 0 ],
+									"originallength" : [ 0.0, "ticks" ],
+									"originaltempo" : [ 120.0 ],
+									"formant" : [ 1.0 ],
 									"slurtime" : [ 0.0 ]
 								}
 
@@ -186,23 +302,23 @@
 						"clips" : [ 							{
 								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\ollieollie__distorted-bass-drum.wav",
 								"filekind" : "audiofile",
-								"selection" : [ 0.0, 1.0 ],
+								"selection" : [ 0.019231, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
 									"mode" : [ "basic" ],
-									"followglobaltempo" : [ 0 ],
-									"speed" : [ 1.0 ],
-									"originaltempo" : [ 120.0 ],
-									"quality" : [ "basic" ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
 									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
+									"quality" : [ "basic" ],
 									"pitchcorrection" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"basictuning" : [ 440 ],
+									"speed" : [ 1.0 ],
+									"followglobaltempo" : [ 0 ],
+									"formantcorrection" : [ 0 ],
 									"originallengthms" : [ 0.0 ],
+									"timestretch" : [ 0 ],
+									"originallength" : [ 0.0, "ticks" ],
+									"originaltempo" : [ 120.0 ],
+									"formant" : [ 1.0 ],
 									"slurtime" : [ 0.0 ]
 								}
 
@@ -230,19 +346,19 @@
 								"loop" : 0,
 								"content_state" : 								{
 									"mode" : [ "basic" ],
-									"followglobaltempo" : [ 0 ],
-									"speed" : [ 1.0 ],
-									"originaltempo" : [ 120.0 ],
-									"quality" : [ "basic" ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
 									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
+									"quality" : [ "basic" ],
 									"pitchcorrection" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"basictuning" : [ 440 ],
+									"speed" : [ 1.0 ],
+									"followglobaltempo" : [ 0 ],
+									"formantcorrection" : [ 0 ],
 									"originallengthms" : [ 0.0 ],
+									"timestretch" : [ 0 ],
+									"originallength" : [ 0.0, "ticks" ],
+									"originaltempo" : [ 120.0 ],
+									"formant" : [ 1.0 ],
 									"slurtime" : [ 0.0 ]
 								}
 
@@ -429,25 +545,25 @@
 				"box" : 				{
 					"data" : 					{
 						"clips" : [ 							{
-								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\ollieollie__distorted-bass-drum.wav",
+								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\nabz871__dnb-kick-1.wav",
 								"filekind" : "audiofile",
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
 									"mode" : [ "basic" ],
-									"followglobaltempo" : [ 0 ],
-									"speed" : [ 1.0 ],
-									"originaltempo" : [ 120.0 ],
-									"quality" : [ "basic" ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
 									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
+									"quality" : [ "basic" ],
 									"pitchcorrection" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"basictuning" : [ 440 ],
+									"speed" : [ 1.0 ],
+									"followglobaltempo" : [ 0 ],
+									"formantcorrection" : [ 0 ],
 									"originallengthms" : [ 0.0 ],
+									"timestretch" : [ 0 ],
+									"originallength" : [ 0.0, "ticks" ],
+									"originaltempo" : [ 120.0 ],
+									"formant" : [ 1.0 ],
 									"slurtime" : [ 0.0 ]
 								}
 
@@ -518,25 +634,25 @@
 				"box" : 				{
 					"data" : 					{
 						"clips" : [ 							{
-								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\nabz871__dnb-kick-1.wav",
+								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\ianstargem__electronic-kick-drum-1.wav",
 								"filekind" : "audiofile",
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
 									"mode" : [ "basic" ],
-									"followglobaltempo" : [ 0 ],
-									"speed" : [ 1.0 ],
-									"originaltempo" : [ 120.0 ],
-									"quality" : [ "basic" ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
 									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
+									"quality" : [ "basic" ],
 									"pitchcorrection" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"basictuning" : [ 440 ],
+									"speed" : [ 1.0 ],
+									"followglobaltempo" : [ 0 ],
+									"formantcorrection" : [ 0 ],
 									"originallengthms" : [ 0.0 ],
+									"timestretch" : [ 0 ],
+									"originallength" : [ 0.0, "ticks" ],
+									"originaltempo" : [ 120.0 ],
+									"formant" : [ 1.0 ],
 									"slurtime" : [ 0.0 ]
 								}
 
@@ -718,19 +834,19 @@
 								"loop" : 0,
 								"content_state" : 								{
 									"mode" : [ "basic" ],
-									"followglobaltempo" : [ 0 ],
-									"speed" : [ 1.0 ],
-									"originaltempo" : [ 120.0 ],
-									"quality" : [ "basic" ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
 									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
+									"quality" : [ "basic" ],
 									"pitchcorrection" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"basictuning" : [ 440 ],
+									"speed" : [ 1.0 ],
+									"followglobaltempo" : [ 0 ],
+									"formantcorrection" : [ 0 ],
 									"originallengthms" : [ 0.0 ],
+									"timestretch" : [ 0 ],
+									"originallength" : [ 0.0, "ticks" ],
+									"originaltempo" : [ 120.0 ],
+									"formant" : [ 1.0 ],
 									"slurtime" : [ 0.0 ]
 								}
 
@@ -905,7 +1021,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-21", 0 ],
+					"destination" : [ "obj-4", 0 ],
 					"source" : [ "obj-12", 0 ]
 				}
 
@@ -955,8 +1071,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-21", 0 ],
+					"destination" : [ "obj-19", 0 ],
 					"source" : [ "obj-167", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 1 ],
+					"source" : [ "obj-17", 0 ]
 				}
 
 			}
@@ -992,6 +1115,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-19", 1 ],
+					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-180", 0 ]
 				}
@@ -1020,7 +1150,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-193", 0 ],
+					"destination" : [ "obj-21", 0 ],
+					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-25", 0 ],
 					"source" : [ "obj-191", 0 ]
 				}
 
@@ -1113,6 +1250,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-22", 1 ],
+					"source" : [ "obj-20", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-15", 1 ],
 					"order" : 0,
 					"source" : [ "obj-21", 0 ]
@@ -1129,6 +1273,27 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-21", 0 ],
+					"source" : [ "obj-22", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-25", 1 ],
+					"source" : [ "obj-23", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-193", 0 ],
+					"source" : [ "obj-25", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-30", 0 ]
 				}
@@ -1136,7 +1301,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-21", 0 ],
+					"destination" : [ "obj-22", 0 ],
 					"source" : [ "obj-33", 0 ]
 				}
 
@@ -1152,6 +1317,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-36", 0 ],
 					"source" : [ "obj-37", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-21", 0 ],
+					"source" : [ "obj-4", 0 ]
 				}
 
 			}
