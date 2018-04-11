@@ -90,7 +90,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 30.0, 30.0, 100.0, 22.0 ],
 					"style" : "",
-					"text" : "freqshift~ -200"
+					"text" : "freqshift~ -100"
 				}
 
 			}
@@ -119,7 +119,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 15.0, 15.0, 100.0, 22.0 ],
 					"style" : "",
-					"text" : "freqshift~ 200"
+					"text" : "freqshift~ 100"
 				}
 
 			}
@@ -148,7 +148,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 100.0, 22.0 ],
 					"style" : "",
-					"text" : "freqshift~ 400"
+					"text" : "freqshift~ 100"
 				}
 
 			}
@@ -292,7 +292,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 31.0, 160.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "0"
+					"text" : "3"
 				}
 
 			}
@@ -794,7 +794,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 515.5, 431.666748, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "/king"
+					"text" : "/bishop"
 				}
 
 			}
