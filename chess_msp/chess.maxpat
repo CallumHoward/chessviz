@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 26.0, 85.0, 1468.0, 713.0 ],
+		"rect" : [ 42.0, 85.0, 1468.0, 713.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,603 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-117",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "bang" ],
+					"patching_rect" : [ 898.0, 112.0, 74.0, 22.0 ],
+					"style" : "",
+					"text" : "play~ drone"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-112",
+					"linecount" : 3,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1142.666626, 1491.0, 163.0, 50.0 ],
+					"style" : "",
+					"text" : "read sound/8klangfabrik__saccharinesynth.aiff"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-113",
+					"linecount" : 2,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1123.666626, 1646.666626, 108.0, 36.0 ],
+					"style" : "",
+					"text" : "klangfabrik__saccharinesynth.aiff"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-114",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 9,
+					"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
+					"patching_rect" : [ 1123.666626, 1617.666626, 103.0, 22.0 ],
+					"style" : "",
+					"text" : "info~ drone"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-115",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1123.666626, 1456.666748, 50.0, 22.0 ],
+					"style" : "",
+					"text" : "replace"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-116",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "float", "bang" ],
+					"patching_rect" : [ 1123.666626, 1582.666748, 82.0, 22.0 ],
+					"style" : "",
+					"text" : "buffer~ drone"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-102",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 602.0, 430.0, 50.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-101",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 668.0, 430.0, 50.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-65",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "signal" ],
+					"patching_rect" : [ 419.416595, 1037.666626, 60.0, 22.0 ],
+					"style" : "",
+					"text" : "freqshift~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 702.0, 566.0, 39.0, 22.0 ],
+					"style" : "",
+					"text" : "* 300"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-95",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 162.833313, 1414.0, 478.0, 34.0 ],
+					"style" : "",
+					"text" : "read sound files into memory. Click replace to choose new file. This will\nnot be saved unless you update \"read/...\" with new filename"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-51",
+					"linecount" : 3,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 953.666626, 1491.0, 155.0, 50.0 ],
+					"style" : "",
+					"text" : "read sound/802__bdu__closehatac.aiff"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-33",
+					"linecount" : 3,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 756.666626, 1485.5, 143.0, 50.0 ],
+					"style" : "",
+					"text" : "read sound/blackie666__wobeep.wav"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"linecount" : 3,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 568.666626, 1491.0, 140.0, 50.0 ],
+					"style" : "",
+					"text" : "read sound/ollieollie__distorted-bass-drum.wav"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"linecount" : 3,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 378.333313, 1485.5, 122.0, 50.0 ],
+					"style" : "",
+					"text" : "read sound/nabz871__dnb-kick-1.wav"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-96",
+					"linecount" : 3,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 184.333313, 1485.5, 143.0, 50.0 ],
+					"style" : "",
+					"text" : "read ianstargem__electronic-kick-drum-1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-94",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "bang" ],
+					"patching_rect" : [ 1366.0, 721.0, 76.0, 22.0 ],
+					"style" : "",
+					"text" : "play~ track1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-93",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "bang" ],
+					"patching_rect" : [ 1344.0, 546.833374, 76.0, 22.0 ],
+					"style" : "",
+					"text" : "play~ track5"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-92",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "bang" ],
+					"patching_rect" : [ 900.0, 756.833374, 76.0, 22.0 ],
+					"style" : "",
+					"text" : "play~ track4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-89",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "bang" ],
+					"patching_rect" : [ 737.0, 781.833374, 76.0, 22.0 ],
+					"style" : "",
+					"text" : "play~ track3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-88",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "bang" ],
+					"patching_rect" : [ 579.833313, 777.0, 76.0, 22.0 ],
+					"style" : "",
+					"text" : "play~ track3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-87",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "bang" ],
+					"patching_rect" : [ 484.0, 777.0, 76.0, 22.0 ],
+					"style" : "",
+					"text" : "play~ track2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-86",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "bang" ],
+					"patching_rect" : [ 334.666595, 777.0, 76.0, 22.0 ],
+					"style" : "",
+					"text" : "play~ track2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-82",
+					"linecount" : 2,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 933.666626, 1646.666626, 108.0, 36.0 ],
+					"style" : "",
+					"text" : "802__bdu__closehatac.aiff"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-83",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 9,
+					"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
+					"patching_rect" : [ 933.666626, 1617.666626, 103.0, 22.0 ],
+					"style" : "",
+					"text" : "info~ track5"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-84",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 933.666626, 1456.666748, 50.0, 22.0 ],
+					"style" : "",
+					"text" : "replace"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-85",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "float", "bang" ],
+					"patching_rect" : [ 933.666626, 1582.666748, 84.0, 22.0 ],
+					"style" : "",
+					"text" : "buffer~ track5"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-78",
+					"linecount" : 3,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 726.666626, 1646.666626, 108.0, 50.0 ],
+					"style" : "",
+					"text" : "eryps__snare-pitched-19102013.wav"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-79",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 9,
+					"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
+					"patching_rect" : [ 726.666626, 1617.666626, 103.0, 22.0 ],
+					"style" : "",
+					"text" : "info~ track4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-80",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 726.666626, 1456.666748, 50.0, 22.0 ],
+					"style" : "",
+					"text" : "replace"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-81",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "float", "bang" ],
+					"patching_rect" : [ 726.666626, 1582.666748, 84.0, 22.0 ],
+					"style" : "",
+					"text" : "buffer~ track4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-74",
+					"linecount" : 2,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 525.833313, 1646.666626, 108.0, 36.0 ],
+					"style" : "",
+					"text" : "ollieollie__distorted-bass-drum.wav"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-75",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 9,
+					"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
+					"patching_rect" : [ 525.833313, 1617.666626, 103.0, 22.0 ],
+					"style" : "",
+					"text" : "info~ track3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-76",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 525.833313, 1456.666748, 50.0, 22.0 ],
+					"style" : "",
+					"text" : "replace"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-77",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "float", "bang" ],
+					"patching_rect" : [ 525.833313, 1582.666748, 84.0, 22.0 ],
+					"style" : "",
+					"text" : "buffer~ track3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-70",
+					"linecount" : 2,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 346.833313, 1646.666626, 108.0, 36.0 ],
+					"style" : "",
+					"text" : "nabz871__dnb-kick-1.wav"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-71",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 9,
+					"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
+					"patching_rect" : [ 346.833313, 1617.666626, 103.0, 22.0 ],
+					"style" : "",
+					"text" : "info~ track2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-72",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 346.833313, 1456.666748, 50.0, 22.0 ],
+					"style" : "",
+					"text" : "replace"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-73",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "float", "bang" ],
+					"patching_rect" : [ 346.833313, 1582.666748, 84.0, 22.0 ],
+					"style" : "",
+					"text" : "buffer~ track2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-69",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "bang" ],
+					"patching_rect" : [ 36.5, 777.0, 76.0, 22.0 ],
+					"style" : "",
+					"text" : "play~ track1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-68",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "bang" ],
+					"patching_rect" : [ 170.833313, 777.0, 76.0, 22.0 ],
+					"style" : "",
+					"text" : "play~ track1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-56",
+					"linecount" : 3,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 162.833313, 1632.666626, 108.0, 50.0 ],
+					"style" : "",
+					"text" : "ianstargem__electronic-kick-drum-1.wav"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-58",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 9,
+					"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
+					"patching_rect" : [ 162.833313, 1603.666626, 103.0, 22.0 ],
+					"style" : "",
+					"text" : "info~ track1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-66",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 162.833313, 1456.666748, 50.0, 22.0 ],
+					"style" : "",
+					"text" : "replace"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-67",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "float", "bang" ],
+					"patching_rect" : [ 162.833313, 1568.666748, 84.0, 22.0 ],
+					"style" : "",
+					"text" : "buffer~ track1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-52",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -45,32 +642,6 @@
 					"patching_rect" : [ 629.333313, 375.666748, 174.0, 20.0 ],
 					"style" : "",
 					"text" : "/route piece colour isCapture"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-50",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 673.166687, 430.0, 50.0, 22.0 ],
-					"style" : "",
-					"text" : "1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-6",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 605.166687, 430.0, 50.0, 22.0 ],
-					"style" : "",
-					"text" : "1"
 				}
 
 			}
@@ -115,141 +686,6 @@
 			}
 , 			{
 				"box" : 				{
-					"data" : 					{
-						"clips" : [ 							{
-								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\klangfabrik__saccharinesynth.aiff",
-								"filekind" : "audiofile",
-								"selection" : [ 0.048077, 1.0 ],
-								"loop" : 0,
-								"content_state" : 								{
-									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
-									"quality" : [ "basic" ],
-									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
-									"pitchcorrection" : [ 0 ],
-									"originallengthms" : [ 0.0 ],
-									"speed" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"followglobaltempo" : [ 0 ]
-								}
-
-							}
- ]
-					}
-,
-					"id" : "obj-28",
-					"maxclass" : "playlist~",
-					"numinlets" : 1,
-					"numoutlets" : 5,
-					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-					"patching_rect" : [ 893.0, 98.666672, 150.0, 30.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"data" : 					{
-						"clips" : [ 							{
-								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\blackie666__wobeep.wav",
-								"filekind" : "audiofile",
-								"selection" : [ 0.0, 1.0 ],
-								"loop" : 0,
-								"content_state" : 								{
-									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
-									"quality" : [ "basic" ],
-									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
-									"pitchcorrection" : [ 0 ],
-									"originallengthms" : [ 0.0 ],
-									"speed" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"followglobaltempo" : [ 0 ]
-								}
-
-							}
- ]
-					}
-,
-					"id" : "obj-65",
-					"maxclass" : "playlist~",
-					"numinlets" : 1,
-					"numoutlets" : 5,
-					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-					"patching_rect" : [ 960.166687, 778.666626, 150.0, 30.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-54",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 133.333313, 898.0, 84.0, 22.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 45.0, 45.0, 100.0, 22.0 ],
-					"style" : "",
-					"text" : "freqshift~ 200"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"data" : 					{
-						"clips" : [ 							{
-								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\blackie666__rancidreverbtriangle.wav",
-								"filekind" : "audiofile",
-								"selection" : [ 0.0, 1.0 ],
-								"loop" : 0,
-								"content_state" : 								{
-									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
-									"quality" : [ "basic" ],
-									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
-									"pitchcorrection" : [ 0 ],
-									"originallengthms" : [ 0.0 ],
-									"speed" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"followglobaltempo" : [ 0 ]
-								}
-
-							}
- ]
-					}
-,
-					"id" : "obj-53",
-					"maxclass" : "playlist~",
-					"numinlets" : 1,
-					"numoutlets" : 5,
-					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-					"patching_rect" : [ 133.333313, 858.0, 150.0, 30.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"format" : 6,
 					"id" : "obj-47",
 					"maxclass" : "flonum",
@@ -257,7 +693,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 891.833374, 820.166626, 50.0, 22.0 ],
+					"patching_rect" : [ 830.833374, 832.0, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -269,7 +705,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 798.0, 820.166626, 70.0, 22.0 ],
+					"patching_rect" : [ 737.0, 832.0, 70.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 45.0, 45.0, 100.0, 22.0 ],
 					"style" : "",
@@ -286,7 +722,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1039.0, 865.166626, 50.0, 22.0 ],
+					"patching_rect" : [ 998.0, 852.0, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -298,7 +734,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 941.0, 861.0, 70.0, 22.0 ],
+					"patching_rect" : [ 900.0, 847.833374, 70.0, 22.0 ],
 					"style" : "",
 					"text" : "cverb~ 100"
 				}
@@ -313,7 +749,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1058.0, 820.166626, 50.0, 22.0 ],
+					"patching_rect" : [ 993.0, 806.166626, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -325,7 +761,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 964.166626, 820.166626, 84.0, 22.0 ],
+					"patching_rect" : [ 899.166626, 806.166626, 84.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 30.0, 30.0, 100.0, 22.0 ],
 					"style" : "",
@@ -340,7 +776,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 781.0, 574.599976, 29.5, 22.0 ],
+					"patching_rect" : [ 773.0, 574.599976, 29.5, 22.0 ],
 					"style" : "",
 					"text" : "1"
 				}
@@ -353,7 +789,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 781.0, 526.666748, 24.0, 24.0 ],
+					"patching_rect" : [ 773.0, 526.666748, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -453,46 +889,6 @@
 			}
 , 			{
 				"box" : 				{
-					"data" : 					{
-						"clips" : [ 							{
-								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\ianstargem__electronic-kick-drum-1.wav",
-								"filekind" : "audiofile",
-								"selection" : [ 0.0, 1.0 ],
-								"loop" : 0,
-								"content_state" : 								{
-									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
-									"quality" : [ "basic" ],
-									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
-									"pitchcorrection" : [ 0 ],
-									"originallengthms" : [ 0.0 ],
-									"speed" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"followglobaltempo" : [ 0 ]
-								}
-
-							}
- ]
-					}
-,
-					"id" : "obj-16",
-					"maxclass" : "playlist~",
-					"numinlets" : 1,
-					"numoutlets" : 5,
-					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-					"patching_rect" : [ 1366.0, 714.166626, 150.0, 30.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"format" : 6,
 					"id" : "obj-2",
 					"maxclass" : "flonum",
@@ -500,7 +896,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 231.166656, 820.166626, 50.0, 22.0 ],
+					"patching_rect" : [ 264.666656, 827.166626, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -512,7 +908,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 133.333313, 820.166626, 84.0, 22.0 ],
+					"patching_rect" : [ 166.833313, 827.166626, 84.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 15.0, 15.0, 100.0, 22.0 ],
 					"style" : "",
@@ -558,7 +954,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 389.833313, 820.166626, 50.0, 22.0 ],
+					"patching_rect" : [ 422.499939, 827.166626, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -570,7 +966,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 295.999969, 820.166626, 88.0, 22.0 ],
+					"patching_rect" : [ 328.666595, 827.166626, 88.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 30.0, 30.0, 100.0, 22.0 ],
 					"style" : "",
@@ -587,7 +983,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 716.5, 820.166626, 50.0, 22.0 ],
+					"patching_rect" : [ 669.666687, 827.166626, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -599,7 +995,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 622.666626, 820.166626, 84.0, 22.0 ],
+					"patching_rect" : [ 575.833313, 827.166626, 84.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 15.0, 15.0, 100.0, 22.0 ],
 					"style" : "",
@@ -616,7 +1012,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 58.450012, 820.166626, 50.0, 22.0 ],
+					"patching_rect" : [ 104.950012, 827.166626, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -628,7 +1024,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ -39.383331, 820.166626, 84.0, 22.0 ],
+					"patching_rect" : [ 7.116669, 827.166626, 84.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 100.0, 22.0 ],
 					"style" : "",
@@ -664,46 +1060,6 @@
 			}
 , 			{
 				"box" : 				{
-					"data" : 					{
-						"clips" : [ 							{
-								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\802__bdu__closehatac.aiff",
-								"filekind" : "audiofile",
-								"selection" : [ 0.028846, 1.0 ],
-								"loop" : 0,
-								"content_state" : 								{
-									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
-									"quality" : [ "basic" ],
-									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
-									"pitchcorrection" : [ 0 ],
-									"originallengthms" : [ 0.0 ],
-									"speed" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"followglobaltempo" : [ 0 ]
-								}
-
-							}
- ]
-					}
-,
-					"id" : "obj-191",
-					"maxclass" : "playlist~",
-					"numinlets" : 1,
-					"numoutlets" : 5,
-					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-					"patching_rect" : [ 1344.0, 537.333374, 150.0, 30.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-188",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -729,46 +1085,6 @@
 			}
 , 			{
 				"box" : 				{
-					"data" : 					{
-						"clips" : [ 							{
-								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\ollieollie__distorted-bass-drum.wav",
-								"filekind" : "audiofile",
-								"selection" : [ 0.0, 1.0 ],
-								"loop" : 0,
-								"content_state" : 								{
-									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
-									"quality" : [ "basic" ],
-									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
-									"pitchcorrection" : [ 0 ],
-									"originallengthms" : [ 0.0 ],
-									"speed" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"followglobaltempo" : [ 0 ]
-								}
-
-							}
- ]
-					}
-,
-					"id" : "obj-184",
-					"maxclass" : "playlist~",
-					"numinlets" : 1,
-					"numoutlets" : 5,
-					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-					"patching_rect" : [ 798.166687, 778.666626, 150.0, 30.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-181",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -782,92 +1098,12 @@
 			}
 , 			{
 				"box" : 				{
-					"data" : 					{
-						"clips" : [ 							{
-								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\ollieollie__distorted-bass-drum.wav",
-								"filekind" : "audiofile",
-								"selection" : [ 0.019231, 1.0 ],
-								"loop" : 0,
-								"content_state" : 								{
-									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
-									"quality" : [ "basic" ],
-									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
-									"pitchcorrection" : [ 0 ],
-									"originallengthms" : [ 0.0 ],
-									"speed" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"followglobaltempo" : [ 0 ]
-								}
-
-							}
- ]
-					}
-,
-					"id" : "obj-167",
-					"maxclass" : "playlist~",
-					"numinlets" : 1,
-					"numoutlets" : 5,
-					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-					"patching_rect" : [ 623.166687, 778.666626, 150.0, 30.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"data" : 					{
-						"clips" : [ 							{
-								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\nabz871__dnb-kick-1.wav",
-								"filekind" : "audiofile",
-								"selection" : [ 0.0, 1.0 ],
-								"loop" : 0,
-								"content_state" : 								{
-									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
-									"quality" : [ "basic" ],
-									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
-									"pitchcorrection" : [ 0 ],
-									"originallengthms" : [ 0.0 ],
-									"speed" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"followglobaltempo" : [ 0 ]
-								}
-
-							}
- ]
-					}
-,
-					"id" : "obj-178",
-					"maxclass" : "playlist~",
-					"numinlets" : 1,
-					"numoutlets" : 5,
-					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-					"patching_rect" : [ 462.61676, 778.666626, 150.0, 30.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-62",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 737.0, 574.599976, 29.5, 22.0 ],
+					"patching_rect" : [ 625.0, 574.599976, 29.5, 22.0 ],
 					"style" : "",
 					"text" : "1"
 				}
@@ -880,7 +1116,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 737.0, 526.666748, 24.0, 24.0 ],
+					"patching_rect" : [ 625.0, 526.666748, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -892,7 +1128,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 694.0, 574.599976, 29.5, 22.0 ],
+					"patching_rect" : [ 582.0, 574.599976, 29.5, 22.0 ],
 					"style" : "",
 					"text" : "1"
 				}
@@ -905,7 +1141,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 648.25, 574.599976, 29.5, 22.0 ],
+					"patching_rect" : [ 536.25, 574.599976, 29.5, 22.0 ],
 					"style" : "",
 					"text" : "1"
 				}
@@ -918,7 +1154,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 694.0, 526.666748, 24.0, 24.0 ],
+					"patching_rect" : [ 582.0, 526.666748, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -930,7 +1166,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 651.0, 526.666748, 24.0, 24.0 ],
+					"patching_rect" : [ 539.0, 526.666748, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -1007,7 +1243,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 596.0, 574.599976, 29.5, 22.0 ],
+					"patching_rect" : [ 484.0, 574.599976, 29.5, 22.0 ],
 					"style" : "",
 					"text" : "1"
 				}
@@ -1020,61 +1256,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 596.0, 526.666748, 24.0, 24.0 ],
+					"patching_rect" : [ 484.0, 526.666748, 24.0, 24.0 ],
 					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"data" : 					{
-						"clips" : [ 							{
-								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\nabz871__dnb-kick-1.wav",
-								"filekind" : "audiofile",
-								"selection" : [ 0.0, 1.0 ],
-								"loop" : 0,
-								"content_state" : 								{
-									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
-									"quality" : [ "basic" ],
-									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
-									"pitchcorrection" : [ 0 ],
-									"originallengthms" : [ 0.0 ],
-									"speed" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"followglobaltempo" : [ 0 ]
-								}
-
-							}
- ]
-					}
-,
-					"id" : "obj-33",
-					"maxclass" : "playlist~",
-					"numinlets" : 1,
-					"numoutlets" : 5,
-					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-					"patching_rect" : [ 295.999969, 778.666626, 150.0, 30.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-32",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 260.0, 526.666748, 150.0, 34.0 ],
-					"style" : "",
-					"text" : "split into different tracks for different OSC routes"
 				}
 
 			}
@@ -1096,7 +1279,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 422.499939, 1078.0, 45.0, 45.0 ],
+					"patching_rect" : [ 419.416595, 1256.0, 45.0, 45.0 ],
 					"style" : ""
 				}
 
@@ -1116,52 +1299,12 @@
 			}
 , 			{
 				"box" : 				{
-					"data" : 					{
-						"clips" : [ 							{
-								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\ianstargem__electronic-kick-drum-1.wav",
-								"filekind" : "audiofile",
-								"selection" : [ 0.0, 1.0 ],
-								"loop" : 0,
-								"content_state" : 								{
-									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
-									"quality" : [ "basic" ],
-									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
-									"pitchcorrection" : [ 0 ],
-									"originallengthms" : [ 0.0 ],
-									"speed" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"followglobaltempo" : [ 0 ]
-								}
-
-							}
- ]
-					}
-,
-					"id" : "obj-5",
-					"maxclass" : "playlist~",
-					"numinlets" : 1,
-					"numoutlets" : 5,
-					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-					"patching_rect" : [ 131.166656, 778.666626, 150.0, 30.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-199",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 553.0, 574.599976, 29.5, 22.0 ],
+					"patching_rect" : [ 441.0, 574.599976, 29.5, 22.0 ],
 					"style" : "",
 					"text" : "1"
 				}
@@ -1174,7 +1317,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 507.25, 574.599976, 29.5, 22.0 ],
+					"patching_rect" : [ 395.25, 574.599976, 29.5, 22.0 ],
 					"style" : "",
 					"text" : "1"
 				}
@@ -1187,7 +1330,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 553.0, 526.666748, 24.0, 24.0 ],
+					"patching_rect" : [ 441.0, 526.666748, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -1199,7 +1342,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 510.0, 526.666748, 24.0, 24.0 ],
+					"patching_rect" : [ 398.0, 526.666748, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -1211,7 +1354,7 @@
 					"numinlets" : 7,
 					"numoutlets" : 7,
 					"outlettype" : [ "bang", "bang", "bang", "bang", "bang", "bang", "" ],
-					"patching_rect" : [ 510.0, 473.666748, 221.0, 22.0 ],
+					"patching_rect" : [ 398.0, 473.666748, 221.0, 22.0 ],
 					"style" : "",
 					"text" : "sel king queen rook bishop knight pawn"
 				}
@@ -1265,21 +1408,20 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 543.166687, 430.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "1"
+					"text" : "bishop"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-91",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 454.5, 416.0, 50.0, 36.0 ],
+					"patching_rect" : [ 454.5, 416.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "/capture"
+					"text" : "/move"
 				}
 
 			}
@@ -1290,9 +1432,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "int", "int" ],
-					"patching_rect" : [ 506.0, 375.666748, 112.0, 22.0 ],
+					"patching_rect" : [ 506.0, 375.666748, 120.0, 22.0 ],
 					"style" : "",
-					"text" : "unpack sym sym i i"
+					"text" : "unpack sym sym 0 0"
 				}
 
 			}
@@ -1306,46 +1448,6 @@
 					"patching_rect" : [ 506.0, 338.666687, 99.0, 22.0 ],
 					"style" : "",
 					"text" : "udpreceive 5556"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"data" : 					{
-						"clips" : [ 							{
-								"filename" : "C:\\Users\\pigeon\\Documents\\Chess\\chess_msp\\sound\\ianstargem__electronic-kick-drum-1.wav",
-								"filekind" : "audiofile",
-								"selection" : [ 0.0, 1.0 ],
-								"loop" : 0,
-								"content_state" : 								{
-									"mode" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"pitchshift" : [ 1.0 ],
-									"timestretch" : [ 0 ],
-									"quality" : [ "basic" ],
-									"play" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"basictuning" : [ 440 ],
-									"originallength" : [ 0.0, "ticks" ],
-									"pitchcorrection" : [ 0 ],
-									"originallengthms" : [ 0.0 ],
-									"speed" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"followglobaltempo" : [ 0 ]
-								}
-
-							}
- ]
-					}
-,
-					"id" : "obj-12",
-					"maxclass" : "playlist~",
-					"numinlets" : 1,
-					"numoutlets" : 5,
-					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-					"patching_rect" : [ -39.383331, 778.666626, 150.0, 30.0 ],
-					"style" : ""
 				}
 
 			}
@@ -1500,7 +1602,56 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
+					"destination" : [ "obj-26", 0 ],
+					"source" : [ "obj-101", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"source" : [ "obj-102", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-116", 0 ],
+					"source" : [ "obj-112", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-113", 1 ],
+					"source" : [ "obj-114", 7 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-116", 0 ],
+					"source" : [ "obj-115", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-114", 0 ],
+					"source" : [ "obj-116", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-49", 0 ],
+					"source" : [ "obj-117", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-65", 1 ],
 					"source" : [ "obj-12", 0 ]
 				}
 
@@ -1516,16 +1667,9 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-28", 0 ],
+					"destination" : [ "obj-117", 0 ],
 					"order" : 0,
 					"source" : [ "obj-13", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-65", 0 ],
-					"source" : [ "obj-14", 0 ]
 				}
 
 			}
@@ -1545,14 +1689,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-178", 0 ],
+					"destination" : [ "obj-87", 0 ],
 					"source" : [ "obj-159", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-8", 0 ],
+					"destination" : [ "obj-77", 0 ],
 					"source" : [ "obj-16", 0 ]
 				}
 
@@ -1568,13 +1712,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-159", 0 ],
 					"source" : [ "obj-162", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-19", 0 ],
-					"source" : [ "obj-167", 0 ]
 				}
 
 			}
@@ -1610,13 +1747,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-21", 0 ],
-					"source" : [ "obj-178", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-19", 1 ],
 					"source" : [ "obj-18", 0 ]
 				}
@@ -1631,14 +1761,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-48", 0 ],
-					"source" : [ "obj-184", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-191", 0 ],
+					"destination" : [ "obj-93", 0 ],
 					"source" : [ "obj-188", 0 ]
 				}
 
@@ -1663,13 +1786,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
 					"source" : [ "obj-19", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-25", 0 ],
-					"source" : [ "obj-191", 0 ]
 				}
 
 			}
@@ -1747,14 +1863,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
+					"destination" : [ "obj-69", 0 ],
 					"source" : [ "obj-198", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-5", 0 ],
+					"destination" : [ "obj-68", 0 ],
 					"source" : [ "obj-199", 0 ]
 				}
 
@@ -1775,16 +1891,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-15", 1 ],
-					"order" : 0,
-					"source" : [ "obj-21", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-15", 0 ],
-					"order" : 1,
+					"destination" : [ "obj-65", 0 ],
 					"source" : [ "obj-21", 0 ]
 				}
 
@@ -1819,13 +1926,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-49", 0 ],
-					"source" : [ "obj-28", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
 					"source" : [ "obj-3", 0 ]
 				}
@@ -1847,7 +1947,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-22", 0 ],
+					"destination" : [ "obj-81", 0 ],
 					"source" : [ "obj-33", 0 ]
 				}
 
@@ -1889,7 +1989,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-33", 0 ],
+					"destination" : [ "obj-86", 0 ],
 					"source" : [ "obj-36", 0 ]
 				}
 
@@ -1910,7 +2010,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-16", 0 ],
+					"destination" : [ "obj-94", 0 ],
 					"source" : [ "obj-39", 0 ]
 				}
 
@@ -1919,13 +2019,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
 					"source" : [ "obj-4", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-21", 0 ],
-					"source" : [ "obj-40", 0 ]
 				}
 
 			}
@@ -1989,22 +2082,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 0 ],
+					"destination" : [ "obj-73", 0 ],
 					"source" : [ "obj-5", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-54", 0 ],
-					"source" : [ "obj-53", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-21", 0 ],
-					"source" : [ "obj-54", 0 ]
+					"destination" : [ "obj-85", 0 ],
+					"source" : [ "obj-51", 0 ]
 				}
 
 			}
@@ -2052,6 +2138,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-56", 1 ],
+					"source" : [ "obj-58", 7 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-59", 0 ]
 				}
@@ -2073,7 +2166,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-184", 0 ],
+					"destination" : [ "obj-89", 0 ],
 					"source" : [ "obj-62", 0 ]
 				}
 
@@ -2082,6 +2175,20 @@
 				"patchline" : 				{
 					"destination" : [ "obj-62", 0 ],
 					"source" : [ "obj-63", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-101", 0 ],
+					"source" : [ "obj-64", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-102", 0 ],
+					"source" : [ "obj-64", 2 ]
 				}
 
 			}
@@ -2111,29 +2218,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-26", 0 ],
-					"order" : 0,
-					"source" : [ "obj-64", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-50", 0 ],
-					"source" : [ "obj-64", 3 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
-					"order" : 1,
-					"source" : [ "obj-64", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-91", 1 ],
 					"order" : 1,
 					"source" : [ "obj-64", 0 ]
@@ -2142,8 +2226,45 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-38", 0 ],
+					"destination" : [ "obj-15", 1 ],
+					"order" : 0,
 					"source" : [ "obj-65", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"order" : 1,
+					"source" : [ "obj-65", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-67", 0 ],
+					"source" : [ "obj-66", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"source" : [ "obj-67", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-68", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-69", 0 ]
 				}
 
 			}
@@ -2156,8 +2277,120 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-70", 1 ],
+					"source" : [ "obj-71", 7 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-73", 0 ],
+					"source" : [ "obj-72", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-71", 0 ],
+					"source" : [ "obj-73", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-74", 1 ],
+					"source" : [ "obj-75", 7 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-77", 0 ],
+					"source" : [ "obj-76", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-75", 0 ],
+					"source" : [ "obj-77", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-78", 1 ],
+					"source" : [ "obj-79", 7 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-193", 0 ],
 					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-81", 0 ],
+					"source" : [ "obj-80", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-79", 0 ],
+					"source" : [ "obj-81", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-82", 1 ],
+					"source" : [ "obj-83", 7 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-85", 0 ],
+					"source" : [ "obj-84", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-83", 0 ],
+					"source" : [ "obj-85", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-22", 0 ],
+					"source" : [ "obj-86", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-21", 0 ],
+					"source" : [ "obj-87", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-19", 0 ],
+					"source" : [ "obj-88", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-48", 0 ],
+					"source" : [ "obj-89", 0 ]
 				}
 
 			}
@@ -2170,62 +2403,54 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-167", 0 ],
+					"destination" : [ "obj-88", 0 ],
 					"source" : [ "obj-90", 0 ]
 				}
 
 			}
- ],
-		"dependency_cache" : [ 			{
-				"name" : "ianstargem__electronic-kick-drum-1.wav",
-				"bootpath" : "~/Documents/Chess/chess_msp/sound",
-				"patcherrelativepath" : "./sound",
-				"type" : "WAVE",
-				"implicit" : 1
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-21", 0 ],
+					"order" : 1,
+					"source" : [ "obj-92", 0 ]
+				}
+
 			}
 , 			{
-				"name" : "nabz871__dnb-kick-1.wav",
-				"bootpath" : "~/Documents/Chess/chess_msp/sound",
-				"patcherrelativepath" : "./sound",
-				"type" : "WAVE",
-				"implicit" : 1
+				"patchline" : 				{
+					"destination" : [ "obj-38", 0 ],
+					"order" : 0,
+					"source" : [ "obj-92", 0 ]
+				}
+
 			}
 , 			{
-				"name" : "ollieollie__distorted-bass-drum.wav",
-				"bootpath" : "~/Documents/Chess/chess_msp/sound",
-				"patcherrelativepath" : "./sound",
-				"type" : "WAVE",
-				"implicit" : 1
+				"patchline" : 				{
+					"destination" : [ "obj-25", 0 ],
+					"source" : [ "obj-93", 0 ]
+				}
+
 			}
 , 			{
-				"name" : "802__bdu__closehatac.aiff",
-				"bootpath" : "~/Documents/Chess/chess_msp/sound",
-				"patcherrelativepath" : "./sound",
-				"type" : "AIFF",
-				"implicit" : 1
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"source" : [ "obj-94", 0 ]
+				}
+
 			}
 , 			{
-				"name" : "blackie666__rancidreverbtriangle.wav",
-				"bootpath" : "~/Documents/Chess/chess_msp/sound",
-				"patcherrelativepath" : "./sound",
-				"type" : "WAVE",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "blackie666__wobeep.wav",
-				"bootpath" : "~/Documents/Chess/chess_msp/sound",
-				"patcherrelativepath" : "./sound",
-				"type" : "WAVE",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "klangfabrik__saccharinesynth.aiff",
-				"bootpath" : "~/Documents/Chess/chess_msp/sound",
-				"patcherrelativepath" : "./sound",
-				"type" : "AIFF",
-				"implicit" : 1
+				"patchline" : 				{
+					"destination" : [ "obj-67", 0 ],
+					"source" : [ "obj-96", 0 ]
+				}
+
 			}
  ],
+		"parameters" : 		{
+
+		}
+,
+		"dependency_cache" : [  ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
