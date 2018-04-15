@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 42.0, 85.0, 1468.0, 713.0 ],
+		"rect" : [ 26.0, 85.0, 1468.0, 713.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -107,7 +107,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 825.333374, 455.766479, 24.0, 24.0 ],
+					"patching_rect" : [ 769.333374, 430.0, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -119,7 +119,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 825.333374, 490.266602, 61.0, 22.0 ],
+					"patching_rect" : [ 760.5, 462.266602, 61.0, 22.0 ],
 					"style" : "",
 					"text" : "random 2"
 				}
@@ -337,14 +337,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-5",
-					"linecount" : 4,
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 381.333313, 1542.5, 118.0, 64.0 ],
+					"patching_rect" : [ 381.333313, 1542.5, 116.0, 50.0 ],
 					"style" : "",
-					"text" : "read anstargem__electronic-snare-drum-2.wav"
+					"text" : "read nabz871__dnb-kick-1.wav"
 				}
 
 			}
@@ -615,14 +615,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-70",
-					"linecount" : 3,
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 349.833313, 1703.666626, 108.0, 50.0 ],
+					"patching_rect" : [ 349.833313, 1703.666626, 108.0, 36.0 ],
 					"style" : "",
-					"text" : "anstargem__electronic-snare-drum-2.wav"
+					"text" : "nabz871__dnb-kick-1.wav"
 				}
 
 			}
@@ -687,7 +687,7 @@
 					"outlettype" : [ "signal", "bang" ],
 					"patching_rect" : [ 170.833313, 777.0, 76.0, 22.0 ],
 					"style" : "",
-					"text" : "play~ track3"
+					"text" : "play~ track4"
 				}
 
 			}
@@ -1453,7 +1453,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 543.166687, 430.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "king"
+					"text" : "pawn"
 				}
 
 			}
@@ -1683,6 +1683,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-65", 1 ],
 					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-125", 0 ],
+					"source" : [ "obj-121", 0 ]
 				}
 
 			}
