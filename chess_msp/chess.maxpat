@@ -1211,9 +1211,9 @@
 					"numinlets" : 7,
 					"numoutlets" : 7,
 					"outlettype" : [ "bang", "bang", "bang", "bang", "bang", "bang", "" ],
-					"patching_rect" : [ 510.0, 473.666748, 241.0, 22.0 ],
+					"patching_rect" : [ 510.0, 473.666748, 221.0, 22.0 ],
 					"style" : "",
-					"text" : "sel /king /queen /rook /bishop /knight /pawn"
+					"text" : "sel king queen rook bishop knight pawn"
 				}
 
 			}
