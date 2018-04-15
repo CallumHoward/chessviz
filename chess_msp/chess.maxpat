@@ -1272,14 +1272,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-91",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 454.5, 416.0, 50.0, 36.0 ],
+					"patching_rect" : [ 454.5, 416.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "/capture"
+					"text" : "/beat"
 				}
 
 			}
