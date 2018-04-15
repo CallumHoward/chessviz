@@ -53,7 +53,7 @@ void ChessVisApp::setup() {
 		as MaxMSP is sending alternating 0s and 1s according to
 		toggle object
 		*/
-		[&](const osc::Message &msg) {
+	[&](const osc::Message &msg) {
 		if (msg[0].int32() == 0) {
 			isFilled = false;
 		}
@@ -111,8 +111,8 @@ void ChessVisApp::generateEvent() {
 		"queen", "king", "rook", "knight", "pawn", "bishop" };
 	int randomNum = rand() % pieces.size();
 	const auto root = "/move";
-	bool isWhite = true;
-	bool isCapture = false;
+	int isWhite = rand() % 2;
+	int isCapture = rand() % 2;
 
 	osc::Message msg(root);
 	msg.append(pieces.at(randomNum));
