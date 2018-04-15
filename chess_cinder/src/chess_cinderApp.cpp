@@ -1,7 +1,7 @@
 #include "cinder/app/App.h"
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
-
+#include<cstdlib>
 #include "cinder/Log.h"
 #include "cinder/Timeline.h"
 #include "cinder/osc/Osc.h"
@@ -10,21 +10,20 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-#define USE_UDP 1
-
-#if USE_UDP
 using Receiver = osc::ReceiverUdp;
 using protocol = asio::ip::udp;
-#else
-using Receiver = osc::ReceiverTcp;
-using protocol = asio::ip::tcp;
-#endif
+const uint16_t localPortReceive = 5555;
 
-const uint16_t localPort = 5555;
+using Sender = osc::SenderUdp;
+const std::string destinationHost = "127.0.0.1";
+const uint16_t destinationPort = 5556;
+const uint16_t localPortSend = 5557;
 
-class SimpleReceiverApp : public App {
+
+
+class ChessVis : public App {
 public:
-	SimpleReceiverApp();
+	ChessVis();
 	void setup() override;
 	void draw() override;
 
@@ -34,23 +33,34 @@ public:
 
 	Receiver mReceiver;
 	std::map<uint64_t, protocol::endpoint> mConnections;
+
+	void onSendError(asio::error_code error);
+	Sender	mSender;
+	bool	mIsConnected;
+
+	void generateEvent();
 };
 
-SimpleReceiverApp::SimpleReceiverApp()
-	: mReceiver(localPort)
+ChessVis::ChessVis()
+	: mReceiver(localPortReceive), mSender(localPortSend, destinationHost, destinationPort), mIsConnected(false)
 {
 }
 
-void SimpleReceiverApp::setup()
+void ChessVis::setup()
 {
-	mReceiver.setListener("/route1",
+	mReceiver.setListener("/beat",
+		/* for /beat, 1 indicates even beat, 0 for odd beat 
+		   as MaxMSP is sending alternating 0s and 1s according to
+		   toggle object 
+		*/
 		[&](const osc::Message &msg) {
 		if (msg[0].int32() == 0) {
-			isFilled = true;
-		}
-		else {
 			isFilled = false;
 		}
+		else {
+			isFilled = true;
+		}
+		generateEvent();
 	});
 	try {
 		// Bind the receiver to the endpoint. This function may throw.
@@ -61,7 +71,6 @@ void SimpleReceiverApp::setup()
 		quit();
 	}
 
-#if USE_UDP
 	// UDP opens the socket and "listens" accepting any message from any endpoint. The listen
 	// function takes an error handler for the underlying socket. Any errors that would
 	// call this function are because of problems with the socket or with the remote message.
@@ -74,54 +83,60 @@ void SimpleReceiverApp::setup()
 		else
 			return true;
 	});
-#else
-	mReceiver.setConnectionErrorFn(
-		// Error Function for Accepted Socket Errors. Will be called anytime there's an
-		// error reading from a connected socket (a socket that has been accepted below).
-		[&](asio::error_code error, uint64_t identifier) {
-		if (error) {
-			auto foundIt = mConnections.find(identifier);
-			if (foundIt != mConnections.end()) {
-				// EOF or end of file error isn't specifically an error. It's just that the
-				// other side closed the connection while you were expecting to still read.
-				if (error == asio::error::eof) {
-					CI_LOG_W("Other side closed the connection: " << error.message() << " val: " << error.value() << " endpoint: " << foundIt->second.address().to_string()
-						<< " port: " << foundIt->second.port());
-				}
-				else {
-					CI_LOG_E("Error Reading from Socket: " << error.message() << " val: "
-						<< error.value() << " endpoint: " << foundIt->second.address().to_string()
-						<< " port: " << foundIt->second.port());
-				}
-				mConnections.erase(foundIt);
-			}
-		}
-	});
-	auto expectedOriginator = protocol::endpoint(asio::ip::address::from_string("127.0.0.1"), 10000);
-	mReceiver.accept(
-		// Error Handler for the acceptor. You'll return true if you want to continue accepting
-		// or fals otherwise.
-		[](asio::error_code error, protocol::endpoint endpoint) -> bool {
-		if (error) {
-			CI_LOG_E("Error Accepting: " << error.message() << " val: " << error.value()
-				<< " endpoint: " << endpoint.address().to_string());
-			return false;
-		}
-		else
-			return true;
-	},
-		// Accept Handler. Return whether or not the acceptor should cache this connection
-		// (true) or dismiss it (false).
-		[&, expectedOriginator](osc::TcpSocketRef socket, uint64_t identifier) -> bool {
-		// Here we return whether or not the remote endpoint is the expected endpoint
-		mConnections.emplace(identifier, socket->remote_endpoint());
-		return socket->remote_endpoint() == expectedOriginator;
-	});
-#endif
+
+	try {
+		// Bind the sender to the endpoint. This function may throw. The exception will
+		// contain asio::error_code information.
+		mSender.bind();
+	}
+	catch (const osc::Exception &ex) {
+		CI_LOG_E("Error binding: " << ex.what() << " val: " << ex.value());
+		//quit();
+	}
+	// Udp doesn't "connect" the same way Tcp does. If bind doesn't throw, we can
+	// consider ourselves connected.
+	mIsConnected = true;
+}
+
+//generate random events to test with MaxMSP
+void ChessVis::generateEvent() {
+	// Make sure you're connected before trying to send.
+	if (!mIsConnected)
+		return;
+	// events: which piece moved, whether or not a capture happened
+	std::vector<std::string> moves = { "queen","king","rook","knight","pawn","bishop","capture" };
+	int randomNum = rand() % 7;
+	std::string randomMove = moves[randomNum];
+	randomMove = "/" + randomMove;
+	osc::Message msg(randomMove);
+	// Send the msg and also provide an error handler. If the message is important you
+	// could store it in the error callback to dispatch it again if there was a problem.
+	mSender.send(msg, std::bind(&ChessVis::onSendError,this, std::placeholders::_1));
 }
 
 
-void SimpleReceiverApp::draw()
+// Unified error handler. Easiest to have a bound function in this situation,
+// since we're sending from many different places.
+void ChessVis::onSendError(asio::error_code error)
+{
+	if (error) {
+		CI_LOG_E("Error sending: " << error.message() << " val: " << error.value());
+		// If you determine that this error is fatal, make sure to flip mIsConnected. It's
+		// possible that the error isn't fatal.
+		mIsConnected = false;
+		try {
+			// Close the socket on exit. This function could throw. The exception will
+			// contain asio::error_code information.
+			mSender.close();
+		}
+		catch (const osc::Exception &ex) {
+			CI_LOG_EXCEPTION("Cleaning up socket: val -" << ex.value(), ex);
+		}
+		quit();
+	}
+}
+
+void ChessVis::draw()
 {
 	gl::clear(GL_COLOR_BUFFER_BIT);
 	gl::setMatricesWindow(getWindowSize());
@@ -140,4 +155,4 @@ auto settingsFunc = [](App::Settings *settings) {
 	settings->setMultiTouchEnabled(false);
 };
 
-CINDER_APP(SimpleReceiverApp, RendererGl, settingsFunc)
+CINDER_APP(ChessVis, RendererGl, settingsFunc)
