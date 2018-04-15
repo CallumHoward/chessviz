@@ -21,6 +21,7 @@
 		67AE2C8518AD495FA95065AD /* Osc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34731FBB5FCE4756838624C0 /* Osc.cpp */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		90B49FA82082E79200253EC1 /* chessVizApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90B49FA72082E79200253EC1 /* chessVizApp.cpp */; };
+		90B49FAB2082F4F800253EC1 /* CommsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90B49FAA2082F4F800253EC1 /* CommsManager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		8C929DF769CC4BBF97AE76D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* ChessViz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChessViz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B49FA72082E79200253EC1 /* chessVizApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = chessVizApp.cpp; path = ../src/chessVizApp.cpp; sourceTree = "<group>"; };
+		90B49FA92082F4F800253EC1 /* CommsManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CommsManager.hpp; path = ../src/CommsManager.hpp; sourceTree = "<group>"; };
+		90B49FAA2082F4F800253EC1 /* CommsManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CommsManager.cpp; path = ../src/CommsManager.cpp; sourceTree = "<group>"; };
 		CBBFB6DA2C594DC1A66066ED /* Osc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Osc.h; path = ../blocks/OSC/src/cinder/osc/Osc.h; sourceTree = "<group>"; };
 		E827DC1426BD458BB8301F5F /* ChessViz_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = ChessViz_Prefix.pch; sourceTree = "<group>"; };
 		F41E3E9ABC0F4A5A81D8BDB8 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
@@ -80,6 +83,8 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				90B49FAA2082F4F800253EC1 /* CommsManager.cpp */,
+				90B49FA92082F4F800253EC1 /* CommsManager.hpp */,
 				90B49FA72082E79200253EC1 /* chessVizApp.cpp */,
 			);
 			name = Source;
@@ -257,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90B49FAB2082F4F800253EC1 /* CommsManager.cpp in Sources */,
 				90B49FA82082E79200253EC1 /* chessVizApp.cpp in Sources */,
 				67AE2C8518AD495FA95065AD /* Osc.cpp in Sources */,
 			);
