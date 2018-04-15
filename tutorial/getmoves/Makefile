@@ -1,7 +1,7 @@
 MODULE_SRC= getMoves.cpp
 MODULE_OBJ= getMoves.o
 MODULE_TARGET= getMoves
-MODULE_INCS= -I../include/
+#MODULE_INCS= -I../include/
 CCFLAGS= -ansi -pedantic -Wall -Wextra -std=c++14 -g -c
 LDFLAGS= -g -o
 
