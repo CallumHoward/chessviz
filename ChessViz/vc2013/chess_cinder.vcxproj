@@ -199,12 +199,17 @@
   <ItemGroup />
   <ItemGroup />
   <ItemGroup>
-    <ClCompile Include="..\src\chess_cinderApp.cpp" />
     <ClCompile Include="..\blocks\OSC\src\cinder\osc\Osc.cpp" />
+    <ClCompile Include="..\src\ChessBoard.cpp" />
+    <ClCompile Include="..\src\chessVizApp.cpp" />
+    <ClCompile Include="..\src\CommsManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h" />
     <ClInclude Include="..\blocks\OSC\src\cinder\osc\Osc.h" />
+    <ClInclude Include="..\src\ChessBoard.hpp" />
+    <ClInclude Include="..\src\chUtils.hpp" />
+    <ClInclude Include="..\src\CommsManager.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
