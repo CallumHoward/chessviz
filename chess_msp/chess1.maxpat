@@ -38,6 +38,19 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 626.0, 1432.0, 60.0, 22.0 ],
+					"style" : "",
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-128",
 					"maxclass" : "button",
 					"numinlets" : 1,
@@ -273,7 +286,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 162.833313, 1414.0, 478.0, 34.0 ],
+					"patching_rect" : [ 165.833313, 1471.0, 478.0, 34.0 ],
 					"style" : "",
 					"text" : "read sound files into memory. Click replace to choose new file. This will\nnot be saved unless you update \"read/...\" with new filename"
 				}
@@ -282,14 +295,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-51",
-					"linecount" : 3,
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 953.666626, 1491.0, 155.0, 50.0 ],
+					"patching_rect" : [ 956.666626, 1548.0, 157.0, 36.0 ],
 					"style" : "",
-					"text" : "read sound/802__bdu__closehatac.aiff"
+					"text" : "read 802__bdu__closehatac.aiff"
 				}
 
 			}
@@ -301,23 +314,23 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 756.666626, 1485.5, 152.0, 50.0 ],
+					"patching_rect" : [ 759.666626, 1542.5, 147.0, 50.0 ],
 					"style" : "",
-					"text" : "read sound/mpaol2023__4-tone-chime-up.wav"
+					"text" : "read mpaol2023__4-tone-chime-up.wav"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 4,
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 568.666626, 1491.0, 98.0, 64.0 ],
+					"patching_rect" : [ 571.666626, 1548.0, 94.0, 50.0 ],
 					"style" : "",
-					"text" : "read sound/alexiero-1__ai-snare-20.wav"
+					"text" : "read alexiero-1__ai-snare-20.wav"
 				}
 
 			}
@@ -329,23 +342,23 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 378.333313, 1485.5, 127.0, 64.0 ],
+					"patching_rect" : [ 381.333313, 1542.5, 118.0, 64.0 ],
 					"style" : "",
-					"text" : "read sound/anstargem__electronic-snare-drum-2.wav"
+					"text" : "read anstargem__electronic-snare-drum-2.wav"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-96",
-					"linecount" : 3,
+					"linecount" : 4,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 184.333313, 1485.5, 156.0, 50.0 ],
+					"patching_rect" : [ 187.333313, 1542.5, 108.0, 64.0 ],
 					"style" : "",
-					"text" : "read sound/eryps__snare-pitched-19102013.wav"
+					"text" : "read eryps__snare-pitched-19102013.wav"
 				}
 
 			}
@@ -448,7 +461,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 933.666626, 1646.666626, 108.0, 36.0 ],
+					"patching_rect" : [ 936.666626, 1703.666626, 108.0, 36.0 ],
 					"style" : "",
 					"text" : "802__bdu__closehatac.aiff"
 				}
@@ -461,7 +474,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 9,
 					"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
-					"patching_rect" : [ 933.666626, 1617.666626, 103.0, 22.0 ],
+					"patching_rect" : [ 936.666626, 1674.666626, 103.0, 22.0 ],
 					"style" : "",
 					"text" : "info~ track5"
 				}
@@ -474,7 +487,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 933.666626, 1456.666748, 50.0, 22.0 ],
+					"patching_rect" : [ 936.666626, 1513.666748, 50.0, 22.0 ],
 					"style" : "",
 					"text" : "replace"
 				}
@@ -487,7 +500,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 933.666626, 1582.666748, 84.0, 22.0 ],
+					"patching_rect" : [ 936.666626, 1639.666748, 84.0, 22.0 ],
 					"style" : "",
 					"text" : "buffer~ track5"
 				}
@@ -501,7 +514,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 726.666626, 1646.666626, 108.0, 36.0 ],
+					"patching_rect" : [ 729.666626, 1703.666626, 108.0, 36.0 ],
 					"style" : "",
 					"text" : "mpaol2023__4-tone-chime-up.wav"
 				}
@@ -514,7 +527,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 9,
 					"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
-					"patching_rect" : [ 726.666626, 1617.666626, 103.0, 22.0 ],
+					"patching_rect" : [ 729.666626, 1674.666626, 103.0, 22.0 ],
 					"style" : "",
 					"text" : "info~ track4"
 				}
@@ -527,7 +540,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 726.666626, 1456.666748, 50.0, 22.0 ],
+					"patching_rect" : [ 729.666626, 1513.666748, 50.0, 22.0 ],
 					"style" : "",
 					"text" : "replace"
 				}
@@ -540,7 +553,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 726.666626, 1582.666748, 84.0, 22.0 ],
+					"patching_rect" : [ 729.666626, 1639.666748, 84.0, 22.0 ],
 					"style" : "",
 					"text" : "buffer~ track4"
 				}
@@ -554,7 +567,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 525.833313, 1646.666626, 108.0, 36.0 ],
+					"patching_rect" : [ 528.833313, 1703.666626, 108.0, 36.0 ],
 					"style" : "",
 					"text" : "alexiero-1__ai-snare-20.wav"
 				}
@@ -567,7 +580,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 9,
 					"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
-					"patching_rect" : [ 525.833313, 1617.666626, 103.0, 22.0 ],
+					"patching_rect" : [ 528.833313, 1674.666626, 103.0, 22.0 ],
 					"style" : "",
 					"text" : "info~ track3"
 				}
@@ -580,7 +593,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 525.833313, 1456.666748, 50.0, 22.0 ],
+					"patching_rect" : [ 528.833313, 1513.666748, 50.0, 22.0 ],
 					"style" : "",
 					"text" : "replace"
 				}
@@ -593,7 +606,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 525.833313, 1582.666748, 84.0, 22.0 ],
+					"patching_rect" : [ 528.833313, 1639.666748, 84.0, 22.0 ],
 					"style" : "",
 					"text" : "buffer~ track3"
 				}
@@ -607,7 +620,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 346.833313, 1646.666626, 108.0, 50.0 ],
+					"patching_rect" : [ 349.833313, 1703.666626, 108.0, 50.0 ],
 					"style" : "",
 					"text" : "anstargem__electronic-snare-drum-2.wav"
 				}
@@ -620,7 +633,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 9,
 					"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
-					"patching_rect" : [ 346.833313, 1617.666626, 103.0, 22.0 ],
+					"patching_rect" : [ 349.833313, 1674.666626, 103.0, 22.0 ],
 					"style" : "",
 					"text" : "info~ track2"
 				}
@@ -633,7 +646,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 346.833313, 1456.666748, 50.0, 22.0 ],
+					"patching_rect" : [ 349.833313, 1513.666748, 50.0, 22.0 ],
 					"style" : "",
 					"text" : "replace"
 				}
@@ -646,7 +659,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 346.833313, 1582.666748, 84.0, 22.0 ],
+					"patching_rect" : [ 349.833313, 1639.666748, 84.0, 22.0 ],
 					"style" : "",
 					"text" : "buffer~ track2"
 				}
@@ -686,7 +699,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 162.833313, 1632.666626, 108.0, 50.0 ],
+					"patching_rect" : [ 165.833313, 1689.666626, 108.0, 50.0 ],
 					"style" : "",
 					"text" : "eryps__snare-pitched-19102013.wav"
 				}
@@ -699,7 +712,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 9,
 					"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
-					"patching_rect" : [ 162.833313, 1603.666626, 103.0, 22.0 ],
+					"patching_rect" : [ 165.833313, 1660.666626, 103.0, 22.0 ],
 					"style" : "",
 					"text" : "info~ track1"
 				}
@@ -712,7 +725,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 162.833313, 1456.666748, 50.0, 22.0 ],
+					"patching_rect" : [ 165.833313, 1513.666748, 50.0, 22.0 ],
 					"style" : "",
 					"text" : "replace"
 				}
@@ -725,7 +738,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 162.833313, 1568.666748, 84.0, 22.0 ],
+					"patching_rect" : [ 165.833313, 1625.666748, 84.0, 22.0 ],
 					"style" : "",
 					"text" : "buffer~ track1"
 				}
@@ -1440,7 +1453,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 543.166687, 430.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "pawn"
+					"text" : "king"
 				}
 
 			}
@@ -2211,6 +2224,46 @@
 				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-59", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"order" : 2,
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-33", 0 ],
+					"order" : 1,
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"order" : 3,
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-51", 0 ],
+					"order" : 0,
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-96", 0 ],
+					"order" : 4,
+					"source" : [ "obj-6", 0 ]
 				}
 
 			}
