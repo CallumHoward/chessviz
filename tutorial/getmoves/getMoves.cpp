@@ -63,35 +63,28 @@ int main() {
             for (const auto& move : movelist) {
                 std::cout << "move: ." << move << "." << '\n';
 
-                auto play = move.white();
-                positions.update(play);
-                const auto from = play.fromSquare();
-
-                if (from.null()) {
-                    std::cout << "empty from move\n";
-                    continue;
-                }
-
-                const auto fromRow = static_cast<size_t>(from.row() - '0');
-                const auto fromCol = static_cast<size_t>(from.col() - 'a');
-
-                std::cout << (int)from.row() << ", " << (int)from.col() << '\n';
-
                 {
-                    const auto from = move.white().fromSquare();
-                    const auto fromRow = static_cast<size_t>(from.row() - '0');
+                    auto play = move.white();
+                    positions.update(play);
+                    const auto from = play.fromSquare();
+
+                    const auto fromRow = static_cast<size_t>(from.row() - '1');
                     const auto fromCol = static_cast<size_t>(from.col() - 'a');
                     if (not within(fromRow, 0ul, 8ul) || not within(fromCol, 0ul, 8ul)) {
-                        std::cout << "invalid move: " << fromRow << ", " << fromCol << "\n";
+                        std::cout << "invalid white from move: "
+                            << fromRow << ", " << fromCol
+                            << " <= " << from.row() << ", " << from.col() << "\n";
                     } else {
                         board.setCell(fromRow, fromCol, ch::AsciiBoard::EMPTY);
                     }
 
                     const auto to = move.white().toSquare();
-                    const auto toRow = static_cast<size_t>(to.row() - '0');
+                    const auto toRow = static_cast<size_t>(to.row() - '1');
                     const auto toCol = static_cast<size_t>(to.col() - 'a');
                     if (not within(toRow, 0ul, 8ul) || not within(toCol, 0ul, 8ul)) {
-                        std::cout << "invalid move: " << fromRow << ", " << fromCol << "\n";
+                        std::cout << "invalid white to move: "
+                            << fromRow << ", " << fromCol
+                            << " <= " << from.row() << ", " << from.col() << "\n";
                     } else {
                         board.setCell(toRow, toCol, ch::AsciiBoard::OCCUPIED);
                     }
@@ -99,10 +92,10 @@ int main() {
 
                 board.printBoard();
                 std::cout << std::endl;
-                */
 
                 {
                     auto play = move.black();
+                    if (not play.valid()) { break; }
                     positions.update(play);
                     const auto from = play.fromSquare();
 
