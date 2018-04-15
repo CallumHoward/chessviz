@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 77.0, 1468.0, 713.0 ],
+		"rect" : [ 42.0, 85.0, 1468.0, 713.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -296,14 +296,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-33",
-					"linecount" : 4,
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 756.666626, 1485.5, 111.0, 64.0 ],
+					"patching_rect" : [ 756.666626, 1485.5, 152.0, 50.0 ],
 					"style" : "",
-					"text" : "read sound/blackie666__rancidreverbtriangle.wav"
+					"text" : "read sound/mpaol2023__4-tone-chime-up.wav"
 				}
 
 			}
@@ -496,14 +496,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-78",
-					"linecount" : 3,
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 726.666626, 1646.666626, 108.0, 50.0 ],
+					"patching_rect" : [ 726.666626, 1646.666626, 108.0, 36.0 ],
 					"style" : "",
-					"text" : "eryps__snare-pitched-19102013.wav"
+					"text" : "mpaol2023__4-tone-chime-up.wav"
 				}
 
 			}
@@ -602,14 +602,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-70",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 346.833313, 1646.666626, 108.0, 36.0 ],
+					"patching_rect" : [ 346.833313, 1646.666626, 108.0, 50.0 ],
 					"style" : "",
-					"text" : "mpaol2023__4-tone-chime-up.wav"
+					"text" : "anstargem__electronic-snare-drum-2.wav"
 				}
 
 			}
@@ -681,14 +681,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-56",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 162.833313, 1632.666626, 108.0, 36.0 ],
+					"patching_rect" : [ 162.833313, 1632.666626, 108.0, 50.0 ],
 					"style" : "",
-					"text" : "nabz871__dnb-kick-1.wav"
+					"text" : "eryps__snare-pitched-19102013.wav"
 				}
 
 			}
@@ -1440,7 +1440,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 543.166687, 430.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "rook"
+					"text" : "pawn"
 				}
 
 			}
@@ -2501,10 +2501,6 @@
 
 			}
  ],
-		"parameters" : 		{
-
-		}
-,
 		"dependency_cache" : [  ],
 		"autosave" : 0,
 		"styles" : [ 			{
