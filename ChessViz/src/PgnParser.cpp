@@ -57,12 +57,11 @@ std::vector<ChessBoard> PgnParser::processGame(const pgn::Game& game) {
     return chessBoards;
 }
 
-void PgnParser::processSquares(pgn::Square from, pgn::Square to) {
-    const auto fromCoord = getCoord(from);
-    chessBoard.setCell(fromCoord.first, fromCoord.second, Cell::EMPTY);
-
-    const auto toCoord = getCoord(to);
-    chessBoard.setCell(toCoord.first, toCoord.second, Cell::B_KING);
+void PgnParser::processPieceMove(ChessBoard& chessBoard,
+        const std::pair<size_t, size_t>& from, const std::pair<size_t, size_t>& to) {
+    const auto cellContents = chessBoard.getCell(from.first, from.second);
+    chessBoard.setCell(from.first, from.second, Cell::EMPTY);
+    chessBoard.setCell(to.first, to.second, cellContents);
 }
 
 void PgnParser::processPlay(ChessBoard& chessBoard, pgn::Position& positions, pgn::Ply play) {
@@ -70,33 +69,46 @@ void PgnParser::processPlay(ChessBoard& chessBoard, pgn::Position& positions, pg
 
     // castling is a special case
     if (play.isShortCastle()) {
-        if (positions.sideToMove() == pgn::Color::white) {
-            processSquares(pgn::Square('e', '8', pgn::Piece::BlackKing()),
-                    pgn::Square('g', '8', pgn::Piece::BlackKing()));
-
-            processSquares(pgn::Square('h', '8', pgn::Piece::BlackRook()),
-                    pgn::Square('g', '8', pgn::Square('f', '8', pgn::Piece::BlackRook())));
+        if (positions.sideToMove() == pgn::Color::white) {  // so it was black
+            processPieceMove(chessBoard,
+                    getCoord(pgn::Square('e', '8', pgn::Piece::BlackKing())),
+                    getCoord(pgn::Square('g', '8', pgn::Piece::BlackKing())));
+            processPieceMove(chessBoard,
+                    getCoord(pgn::Square('h', '8', pgn::Piece::BlackRook())),
+                    getCoord(pgn::Square('f', '8', pgn::Piece::BlackRook())));
 
         } else {
-            processSquares(pgn::Square('e', '1', pgn::Piece::WhiteKing()),
-                    pgn::Square('g', '1', pgn::Piece::WhiteKing()));
-
-            processSquares(pgn::Square('h', '1', pgn::Piece::WhiteRook()),
-                    pgn::Square('f', '1', pgn::Piece::WhiteRook());
+            processPieceMove(chessBoard,
+                    getCoord(pgn::Square('g', '1', pgn::Piece::WhiteKing())),
+                    getCoord(pgn::Square('g', '1', pgn::Piece::WhiteKing())));
+            processPieceMove(chessBoard,
+                    getCoord(pgn::Square('h', '1', pgn::Piece::WhiteRook())),
+                    getCoord(pgn::Square('f', '1', pgn::Piece::WhiteRook())));
         }
 
+    } else if (play.isLongCastle()) {
+        if (positions.sideToMove() == pgn::Color::white) {  // so it was black
+            processPieceMove(chessBoard,
+                    getCoord(pgn::Square('e', '8', pgn::Piece::BlackKing())),
+                    getCoord(pgn::Square('c', '8', pgn::Piece::BlackKing())));
+            processPieceMove(chessBoard,
+                    getCoord(pgn::Square('a', '8', pgn::Piece::BlackRook())),
+                    getCoord(pgn::Square('d', '8', pgn::Piece::BlackRook())));
+
+        } else {
+            processPieceMove(chessBoard,
+                    getCoord(pgn::Square('e', '1', pgn::Piece::WhiteKing())),
+                    getCoord(pgn::Square('c', '1', pgn::Piece::WhiteKing())));
+            processPieceMove(chessBoard,
+                    getCoord(pgn::Square('a', '1', pgn::Piece::WhiteRook())),
+                    getCoord(pgn::Square('d', '1', pgn::Piece::WhiteRook())));
+        }
+
+    } else {
+        const auto fromCoord = getCoord(play.fromSquare());
+        const auto toCoord = getCoord(play.toSquare());
+        processPieceMove(chessBoard, fromCoord, toCoord);
     }
-
-    if (play.isLongCastle()) {
-
-    }
-
-    const auto fromCoord = getCoord(play.fromSquare());
-    Cell cellContents = chessBoard.getCell(fromCoord.first, fromCoord.second);
-    chessBoard.setCell(fromCoord.first, fromCoord.second, Cell::EMPTY);
-
-    const auto toCoord = getCoord(play.toSquare());
-    chessBoard.setCell(toCoord.first, toCoord.second, cellContents);
 }
 
 std::pair<size_t, size_t> PgnParser::getCoord(const pgn::Square& square) {

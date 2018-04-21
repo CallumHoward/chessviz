@@ -23,7 +23,8 @@ private:
     std::vector<ChessBoard> processGame(const pgn::Game& game);
     void processPlay(ChessBoard& chessBoard, pgn::Position& positions, pgn::Ply play);
     std::pair<size_t, size_t> getCoord(const pgn::Square& square);
-
+    void processPieceMove(ChessBoard& chessBoard,
+            const std::pair<size_t, size_t>& from, const std::pair<size_t, size_t>& to);
     std::vector<std::vector<ChessBoard>> mGames;
 };
 
