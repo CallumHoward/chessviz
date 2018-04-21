@@ -22,6 +22,7 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		908C17B6208AE4EC00FD8E54 /* ChessBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908C17B1208AE4EB00FD8E54 /* ChessBoard.cpp */; };
 		908C17B7208AE4EC00FD8E54 /* PgnParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908C17B2208AE4EC00FD8E54 /* PgnParser.cpp */; };
+		908C17BA208B57D200FD8E54 /* FloatingBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908C17B8208B57D200FD8E54 /* FloatingBoard.cpp */; };
 		90B49FA82082E79200253EC1 /* chessVizApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90B49FA72082E79200253EC1 /* chessVizApp.cpp */; };
 		90B49FAB2082F4F800253EC1 /* CommsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90B49FAA2082F4F800253EC1 /* CommsManager.cpp */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,8 @@
 		908C17B3208AE4EC00FD8E54 /* chUtils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = chUtils.hpp; path = ../src/chUtils.hpp; sourceTree = "<group>"; };
 		908C17B4208AE4EC00FD8E54 /* ChessBoard.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ChessBoard.hpp; path = ../src/ChessBoard.hpp; sourceTree = "<group>"; };
 		908C17B5208AE4EC00FD8E54 /* PgnParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PgnParser.hpp; path = ../src/PgnParser.hpp; sourceTree = "<group>"; };
+		908C17B8208B57D200FD8E54 /* FloatingBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FloatingBoard.cpp; path = ../src/FloatingBoard.cpp; sourceTree = "<group>"; };
+		908C17B9208B57D200FD8E54 /* FloatingBoard.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = FloatingBoard.hpp; path = ../src/FloatingBoard.hpp; sourceTree = "<group>"; };
 		90B49FA72082E79200253EC1 /* chessVizApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = chessVizApp.cpp; path = ../src/chessVizApp.cpp; sourceTree = "<group>"; };
 		90B49FA92082F4F800253EC1 /* CommsManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CommsManager.hpp; path = ../src/CommsManager.hpp; sourceTree = "<group>"; };
 		90B49FAA2082F4F800253EC1 /* CommsManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CommsManager.cpp; path = ../src/CommsManager.cpp; sourceTree = "<group>"; };
@@ -90,6 +93,8 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				908C17B8208B57D200FD8E54 /* FloatingBoard.cpp */,
+				908C17B9208B57D200FD8E54 /* FloatingBoard.hpp */,
 				908C17B1208AE4EB00FD8E54 /* ChessBoard.cpp */,
 				908C17B4208AE4EC00FD8E54 /* ChessBoard.hpp */,
 				908C17B3208AE4EC00FD8E54 /* chUtils.hpp */,
@@ -274,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				908C17BA208B57D200FD8E54 /* FloatingBoard.cpp in Sources */,
 				90B49FAB2082F4F800253EC1 /* CommsManager.cpp in Sources */,
 				908C17B7208AE4EC00FD8E54 /* PgnParser.cpp in Sources */,
 				908C17B6208AE4EC00FD8E54 /* ChessBoard.cpp in Sources */,

@@ -10,6 +10,7 @@
 
 #include "CommsManager.hpp"
 #include "PgnParser.hpp"
+#include "FloatingBoard.hpp"
 
 
 using namespace ci;
@@ -27,6 +28,7 @@ private:
     std::string mPgnFilePath;
     chess::CommsManager mCommsManager;
     chess::PgnParser mPgnParser;
+    chess::FloatingBoard mFloatingBoard;
 };
 
 void ChessVisApp::setup() {
@@ -37,16 +39,13 @@ void ChessVisApp::setup() {
     mPgnParser.parse(mPgnFilePath);
     mPgnParser.getBoardAt(0, 0);  //TODO
     mCommsManager.setup();
+    mFloatingBoard.setup();
 }
 
 void ChessVisApp::draw() {
-    gl::clear(GL_COLOR_BUFFER_BIT);
-    gl::setMatricesWindow(getWindowSize());
-    if (mCommsManager.isFilled()) {
-        gl::drawStrokedCircle(circlePos, 100);
-    } else {
-        gl::drawSolidCircle(circlePos, 100);
-    }
+    gl::clear(Color{0.1, 0.1, 0.2});
+
+    mFloatingBoard.draw();
 }
 
 auto settingsFunc = [](App::Settings *settings) {
