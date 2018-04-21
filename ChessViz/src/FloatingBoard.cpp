@@ -4,6 +4,7 @@
 
 #include "cinder/app/App.h"
 #include "cinder/Rand.h"
+#include "cinder/gl/gl.h"
 
 #include "FloatingBoard.hpp"
 
@@ -21,8 +22,8 @@ void FloatingBoard::setup() {
         mTiles.emplace_back(gl::Texture::create(image));
     }
 
-    const auto width = 50;
-    const auto height = 50;
+    const auto width = 100;
+    const auto height = 100;
     const auto leftMargin = 50;
     const auto topMargin = 50;
     const auto rowOffset = height;
@@ -47,8 +48,16 @@ void FloatingBoard::setup() {
 }
 
 void FloatingBoard::draw() {
+    gl::ScopedModelMatrix modelMatrix;
+    gl::translate((getWindowWidth() - 800 - 100) / 2, 0);
     for (int i = 0; i < mTargets.size(); ++i) {
         gl::draw(mTiles.at(mTileMappings.at(i)), mTargets.at(i));
+    }
+
+    for (int i = 0; i < mTargets.size(); ++i) {
+        gl::ScopedModelMatrix targetsModelMatrix;
+        gl::translate(mTargets.at(i).getCenter());
+        gl::drawSolidCircle(vec2{}, 30.0f);
     }
 }
 

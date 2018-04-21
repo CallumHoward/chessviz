@@ -33,7 +33,6 @@ private:
     chess::FloatingBoard mFloatingBoard;
 
     ch::Background mBackground;
-
     gl::TextureRef mImageBackground;
 };
 
@@ -61,7 +60,7 @@ void ChessVisApp::draw() {
     gl::draw(mImageBackground);
 
     mBackground.update(vec2{0.0f, 0.0f});
-    gl::color(0.2f, 0.2f, 0.5f, 0.6f);
+    gl::color(0.4f, 0.4f, 0.7f, 0.6f);
     mBackground.draw();
 
     mFloatingBoard.draw();
