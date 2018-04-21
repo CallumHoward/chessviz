@@ -22,7 +22,7 @@ public:
     };
 
     AsciiBoard() {
-        mBoard = std::vector<std::vector<Cell>>(mBoardSize, std::vector<Cell>(mBoardSize, EMPTY));
+        mBoard = std::vector<std::vector<Cell>>{mBoardSize, std::vector<Cell>{mBoardSize, EMPTY}};
         reset();
     }
 

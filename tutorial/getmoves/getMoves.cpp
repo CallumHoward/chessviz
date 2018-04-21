@@ -78,13 +78,13 @@ int main() {
                         board.setCell(fromRow, fromCol, ch::AsciiBoard::EMPTY);
                     }
 
-                    const auto to = move.white().toSquare();
+                    const auto to = play.toSquare();
                     const auto toRow = static_cast<size_t>(to.row() - '1');
                     const auto toCol = static_cast<size_t>(to.col() - 'a');
                     if (not within(toRow, 0ul, 8ul) || not within(toCol, 0ul, 8ul)) {
                         std::cout << "invalid white to move: "
-                            << fromRow << ", " << fromCol
-                            << " <= " << from.row() << ", " << from.col() << "\n";
+                            << toRow << ", " << toCol
+                            << " <= " << to.row() << ", " << to.col() << "\n";
                     } else {
                         board.setCell(toRow, toCol, ch::AsciiBoard::OCCUPIED);
                     }
@@ -111,15 +111,15 @@ int main() {
                         board.setCell(fromRow, fromCol, ch::AsciiBoard::EMPTY);
                     }
 
-                    const auto to = move.black().toSquare();
+                    const auto to = play.toSquare();
                     const auto toRow = static_cast<size_t>(to.row() - '1');
                     const auto toCol = static_cast<size_t>(to.col() - 'a');
                     if (not within(toRow, 0ul, 8ul) || not within(toCol, 0ul, 8ul)) {
                         std::cout << "invalid black to move: "
                             << toRow << ", " << toCol
-                            << " <= " << from.row() << ", " << from.col() << "\n";
+                            << " <= " << to.row() << ", " << to.col() << "\n";
                     } else {
-                        board.setCell(toRow, toCol, ch::AsciiBoard::EMPTY);
+                        board.setCell(toRow, toCol, ch::AsciiBoard::OCCUPIED);
                     }
                 }
 

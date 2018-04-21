@@ -9,7 +9,7 @@ $(MODULE_TARGET): $(MODULE_OBJ)
 	g++ $(MODULE_OBJ) -lpgn $(LDFLAGS) ./$(MODULE_TARGET)
 
 .cpp.o:
-	g++ $(CCFLAGS) $< $(MODULE_INCS)
+	g++ $(CCFLAGS) $< #$(MODULE_INCS)
 
 clean:
 	rm -f *.o
