@@ -1,21 +1,20 @@
 // ChessBoard.cpp
 
-#include "ChessState.hpp"
 #include "ChessBoard.hpp"
 
 namespace chess {
 
-ChessBoard::setup() {
+void ChessBoard::setup() {
     mBoard = std::vector<std::vector<Cell>>{
         mBoardSize, std::vector<Cell>{mBoardSize, EMPTY}};
     reset();
 }
 
-ChessBoard::draw() {
+void ChessBoard::draw() {
 
 }
 
-ChessBoard::reset() {
+void ChessBoard::reset() {
     for (size_t c = 0; c < mBoard.at(0).size(); ++c) {
         mBoard[0][c] = PAWN;
         mBoard[1][c] = PAWN;

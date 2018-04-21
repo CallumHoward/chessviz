@@ -3,12 +3,11 @@
 #ifndef CHESSBOARD_HPP
 #define CHESSBOARD_HPP
 
-#include "ChessState.hpp"
 
 namespace chess {
 
 enum Cell {
-    EMPTY
+    EMPTY,
     PAWN,
     ROOK,
     KNIGHT,
@@ -23,7 +22,7 @@ public:
     void draw();
     void reset();
 
-    void setCell(size_t row, size_t col, Cell c);
+    void setCell(size_t row, size_t col, Cell c) { mBoard[row][col] = c; }
     Cell getCell(size_t row, size_t col) { return mBoard[row][col]; }
 
 private:

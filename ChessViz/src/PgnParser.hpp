@@ -16,14 +16,14 @@ namespace chess {
 
 class PgnParser {
 public:
-    void parse(std::string pgnFile);
-    ChessBoard& getBoardAt(size_t move);
-    std::vector<ChessBoard> processGame(const pgn::Game& game);
-    void processPlay(const pgn::Ply& play);
+    void parse(const std::string& pgnFile);
     ChessBoard& getBoardAt(size_t game, size_t move);
-    std::pair<int, int> getCoord(const pgn::Square& square);
 
 private:
+    std::vector<ChessBoard> processGame(const pgn::Game& game);
+    void processPlay(ChessBoard& chessBoard, pgn::Ply play);
+    std::pair<size_t, size_t> getCoord(const pgn::Square& square);
+
     std::vector<std::vector<ChessBoard>> mGames;
 };
 

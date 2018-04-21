@@ -20,6 +20,8 @@
 		5E4DA134ABFF46F9BACAFBEC /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 78E52B3D31794453AA8285FC /* CinderApp.icns */; };
 		67AE2C8518AD495FA95065AD /* Osc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34731FBB5FCE4756838624C0 /* Osc.cpp */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		908C17B6208AE4EC00FD8E54 /* ChessBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908C17B1208AE4EB00FD8E54 /* ChessBoard.cpp */; };
+		908C17B7208AE4EC00FD8E54 /* PgnParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908C17B2208AE4EC00FD8E54 /* PgnParser.cpp */; };
 		90B49FA82082E79200253EC1 /* chessVizApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90B49FA72082E79200253EC1 /* chessVizApp.cpp */; };
 		90B49FAB2082F4F800253EC1 /* CommsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90B49FAA2082F4F800253EC1 /* CommsManager.cpp */; };
 /* End PBXBuildFile section */
@@ -42,6 +44,11 @@
 		78E52B3D31794453AA8285FC /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 		8C929DF769CC4BBF97AE76D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* ChessViz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChessViz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		908C17B1208AE4EB00FD8E54 /* ChessBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ChessBoard.cpp; path = ../src/ChessBoard.cpp; sourceTree = "<group>"; };
+		908C17B2208AE4EC00FD8E54 /* PgnParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PgnParser.cpp; path = ../src/PgnParser.cpp; sourceTree = "<group>"; };
+		908C17B3208AE4EC00FD8E54 /* chUtils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = chUtils.hpp; path = ../src/chUtils.hpp; sourceTree = "<group>"; };
+		908C17B4208AE4EC00FD8E54 /* ChessBoard.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ChessBoard.hpp; path = ../src/ChessBoard.hpp; sourceTree = "<group>"; };
+		908C17B5208AE4EC00FD8E54 /* PgnParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PgnParser.hpp; path = ../src/PgnParser.hpp; sourceTree = "<group>"; };
 		90B49FA72082E79200253EC1 /* chessVizApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = chessVizApp.cpp; path = ../src/chessVizApp.cpp; sourceTree = "<group>"; };
 		90B49FA92082F4F800253EC1 /* CommsManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CommsManager.hpp; path = ../src/CommsManager.hpp; sourceTree = "<group>"; };
 		90B49FAA2082F4F800253EC1 /* CommsManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CommsManager.cpp; path = ../src/CommsManager.cpp; sourceTree = "<group>"; };
@@ -83,6 +90,11 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				908C17B1208AE4EB00FD8E54 /* ChessBoard.cpp */,
+				908C17B4208AE4EC00FD8E54 /* ChessBoard.hpp */,
+				908C17B3208AE4EC00FD8E54 /* chUtils.hpp */,
+				908C17B2208AE4EC00FD8E54 /* PgnParser.cpp */,
+				908C17B5208AE4EC00FD8E54 /* PgnParser.hpp */,
 				90B49FAA2082F4F800253EC1 /* CommsManager.cpp */,
 				90B49FA92082F4F800253EC1 /* CommsManager.hpp */,
 				90B49FA72082E79200253EC1 /* chessVizApp.cpp */,
@@ -263,6 +275,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				90B49FAB2082F4F800253EC1 /* CommsManager.cpp in Sources */,
+				908C17B7208AE4EC00FD8E54 /* PgnParser.cpp in Sources */,
+				908C17B6208AE4EC00FD8E54 /* ChessBoard.cpp in Sources */,
 				90B49FA82082E79200253EC1 /* chessVizApp.cpp in Sources */,
 				67AE2C8518AD495FA95065AD /* Osc.cpp in Sources */,
 			);
@@ -289,10 +303,16 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/macosx/$(CONFIGURATION)/libcinder.a\"";
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"\"$(CINDER_PATH)/lib/macosx/$(CONFIGURATION)/libcinder.a\"",
+					"-lpgn",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.libcinder.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ChessViz;
 				SYMROOT = ./build;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = /usr/local/include;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -316,11 +336,17 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/macosx/$(CONFIGURATION)/libcinder.a\"";
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"\"$(CINDER_PATH)/lib/macosx/$(CONFIGURATION)/libcinder.a\"",
+					"-lpgn",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.libcinder.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ChessViz;
 				STRIP_INSTALLED_PRODUCT = YES;
 				SYMROOT = ./build;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = /usr/local/include;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
