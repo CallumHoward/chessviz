@@ -7,12 +7,13 @@
 #include "cinder/gl/gl.h"
 
 #include "FloatingBoard.hpp"
+#include "ChessBoard.hpp"
 
 
 namespace chess {
 
 void FloatingBoard::setup() {
-    for (int i = 0; i < 18; ++i) {
+    for (int i = 0; i < mNumTiles; ++i) {
         mFilenames.emplace_back("tile_" + std::to_string(i) + ".png");
     }
 
@@ -22,21 +23,12 @@ void FloatingBoard::setup() {
         mTiles.emplace_back(gl::Texture::create(image));
     }
 
-    const auto width = 100;
-    const auto height = 100;
-    const auto leftMargin = 50;
-    const auto topMargin = 50;
-    const auto rowOffset = height;
-    const auto colOffset = width;
-    const auto numRows = 8;
-    const auto numCols = 8;
-
-    for (int r = 0; r < numRows; ++r) {
-        for (int c = 0; c < numCols; ++c) {
-            mTargets.emplace_back(leftMargin + (c * colOffset),
-                    topMargin + ((numRows - r - 1) * rowOffset),
-                    leftMargin + (c * colOffset) + width,
-                    topMargin + ((numRows - r - 1) * rowOffset) + height);
+    for (int r = 0; r < mNumRows; ++r) {
+        for (int c = 0; c < mNumCols; ++c) {
+            mTargets.emplace_back(mLeftMargin + (c * mColOffset),
+                                  mTopMargin + ((mNumRows - r - 1) * mRowOffset),
+                                  mLeftMargin + (c * mColOffset) + mWidth,
+                                  mTopMargin + ((mNumRows - r - 1) * mRowOffset) + mHeight);
         }
     }
 
@@ -47,17 +39,30 @@ void FloatingBoard::setup() {
 
 }
 
+void FloatingBoard::update(const ChessBoard& chessBoard) {
+    mCurrentBoard = chessBoard;
+}
+
 void FloatingBoard::draw() {
     gl::ScopedModelMatrix modelMatrix;
-    gl::translate((getWindowWidth() - 800 - 100) / 2, 0);
+    gl::translate((getWindowWidth() - (mWidth * mNumCols) - (2 * mLeftMargin)) / 2, 0);
+
+    // draw tiles
     for (int i = 0; i < mTargets.size(); ++i) {
         gl::draw(mTiles.at(mTileMappings.at(i)), mTargets.at(i));
     }
 
+    // draw pieces
     for (int i = 0; i < mTargets.size(); ++i) {
         gl::ScopedModelMatrix targetsModelMatrix;
         gl::translate(mTargets.at(i).getCenter());
-        gl::drawSolidCircle(vec2{}, 30.0f);
+
+        // convert counter into coord
+        const auto row = i % mNumRows;
+        const auto col = i / mNumRows;
+        if (mCurrentBoard.getCell(row, col) != Cell::EMPTY) {
+            gl::drawSolidCircle(vec2{}, 30.0f);
+        }
     }
 }
 

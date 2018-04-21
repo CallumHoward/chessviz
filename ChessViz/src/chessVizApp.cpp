@@ -21,6 +21,7 @@ using namespace std;
 class ChessVisApp : public App {
 public:
     void setup() override;
+    void update() override;
     void draw() override;
 
 private:
@@ -42,7 +43,6 @@ void ChessVisApp::setup() {
         throw std::runtime_error("could not find pgn file: " + mPgnFilename);
     }
     mPgnParser.parse(mPgnFilePath);
-    mPgnParser.getBoardAt(0, 0);  //TODO
     mCommsManager.setup();
     mFloatingBoard.setup();
 
@@ -51,6 +51,10 @@ void ChessVisApp::setup() {
     const auto asset = loadAsset("Background80.png");
     const auto image = loadImage(asset);
     mImageBackground = gl::Texture::create(image);
+}
+
+void ChessVisApp::update() {
+    mFloatingBoard.update(mPgnParser.getBoardAt(0, 0));  //TODO
 }
 
 void ChessVisApp::draw() {
