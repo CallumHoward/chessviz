@@ -21,7 +21,7 @@ public:
 
 private:
     std::vector<ChessBoard> processGame(const pgn::Game& game);
-    void processPlay(ChessBoard& chessBoard, pgn::Ply play);
+    void processPlay(ChessBoard& chessBoard, pgn::Position& positions, pgn::Ply play);
     std::pair<size_t, size_t> getCoord(const pgn::Square& square);
 
     std::vector<std::vector<ChessBoard>> mGames;

@@ -16,10 +16,10 @@ void ChessBoard::draw() {
 
 void ChessBoard::reset() {
     for (size_t c = 0; c < mBoard.at(0).size(); ++c) {
-        mBoard[0][c] = PAWN;
-        mBoard[1][c] = PAWN;
-        mBoard[mBoardSize - 1][c] = PAWN;
-        mBoard[mBoardSize - 2][c] = PAWN;
+        mBoard[0][c] = W_PAWN;
+        mBoard[1][c] = W_PAWN;
+        mBoard[mBoardSize - 1][c] = B_PAWN;
+        mBoard[mBoardSize - 2][c] = B_PAWN;
     }
 }
 
