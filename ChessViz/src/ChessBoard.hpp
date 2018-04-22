@@ -24,6 +24,7 @@ enum Cell {
     B_QUEEN,
 };
 
+
 class ChessBoard {
 public:
     void setup();
@@ -41,6 +42,11 @@ public:
     //pgn::Ply getLastPlay() const { return mLastPlay; }
 
     char getLastPieceMoved() const;
+
+    static bool isWhiteCell(Cell c) {
+        return c == W_PAWN or c == W_ROOK or c == W_KNIGHT or
+                c == W_BISHOP or c == W_KING or c == W_QUEEN;
+    }
 
 private:
     size_t mBoardSize = 8;

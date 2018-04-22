@@ -33,8 +33,13 @@ private:
     const int mNumCols = 8;
     const int mNumTiles = 18;
 
+    gl::TextureRef mGlow;
+    std::string mGlowFilename = "particle";
     std::vector<gl::TextureRef> mTiles;
-    std::vector<std::string> mFilenames;
+    std::vector<gl::TextureRef> mGlyphs;
+    std::vector<std::string> mTileFilenames;
+    std::vector<std::string> mGlyphFilenames = {
+        "Bishop", "King", "Knight", "Pawn", "Queen", "Rook"};
     std::vector<Rectf> mTargets;
     std::vector<size_t> mTileMappings;
 
