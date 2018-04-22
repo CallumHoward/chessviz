@@ -45,7 +45,8 @@ void FloatingBoard::update(const ChessBoard& chessBoard) {
 
 void FloatingBoard::draw() {
     gl::ScopedModelMatrix modelMatrix;
-    gl::translate((getWindowWidth() - (mWidth * mNumCols) - (2 * mLeftMargin)) / 2, 0);
+    gl::translate((getWindowWidth() - (mWidth * mNumCols) - (2 * mLeftMargin)) / 2,
+            (getWindowHeight() - (mHeight * mNumRows) - (2 * mTopMargin)) / 2);
 
     // draw tiles
     for (int i = 0; i < mTargets.size(); ++i) {

@@ -18,6 +18,7 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
+
 class ChessVisApp : public App {
 public:
     void setup() override;
@@ -25,13 +26,18 @@ public:
     void draw() override;
 
 private:
-    ivec2 circlePos = ivec2{200, 200};
+    chrono::milliseconds mMoveDuration = std::chrono::milliseconds(20);
+    chrono::milliseconds mLastUpdate;
+
     std::string mPgnFilename = "games.pgn";
     std::string mPgnFilePath;
 
     chess::CommsManager mCommsManager;
     chess::PgnParser mPgnParser;
     chess::FloatingBoard mFloatingBoard;
+
+    decltype(mPgnParser.cbegin()) mCurrentGame;
+    decltype(mCurrentGame->cbegin()) mCurrentMove;
 
     ch::Background mBackground;
     gl::TextureRef mImageBackground;
@@ -51,10 +57,42 @@ void ChessVisApp::setup() {
     const auto asset = loadAsset("Background80.png");
     const auto image = loadImage(asset);
     mImageBackground = gl::Texture::create(image);
+
+    mCurrentGame = mPgnParser.cbegin();
+    mCurrentMove = mCurrentGame->cbegin();
+
+    const auto now = chrono::system_clock::now().time_since_epoch();
+    mLastUpdate = chrono::duration_cast<chrono::milliseconds>(now);
+    mFloatingBoard.update(*mCurrentMove);
 }
 
 void ChessVisApp::update() {
-    mFloatingBoard.update(mPgnParser.getBoardAt(0, 0));  //TODO
+    const auto now = chrono::system_clock::now().time_since_epoch();
+    const auto nowMilliseconds = chrono::duration_cast<chrono::milliseconds>(now);
+
+    // loop through the games forever
+    if (mCurrentGame == mPgnParser.cend()) {
+        mCurrentGame = mPgnParser.cbegin();
+        mCurrentMove = mCurrentGame->cbegin();
+    }
+
+    if (nowMilliseconds - mLastUpdate > mMoveDuration) {
+
+        if (mCurrentMove == mCurrentGame->cend()) {
+            // proceed to the next game
+            ++mCurrentGame;
+            if (mCurrentGame != mPgnParser.cend()) {
+                mCurrentMove = mCurrentGame->cbegin();
+            }
+
+        } else { //if (mCurrentMove != mCurrentGame->cend()) {
+            mFloatingBoard.update(*mCurrentMove);
+            mLastUpdate = nowMilliseconds;
+
+            // proceed to the next move
+            ++mCurrentMove;
+        }
+    }
 }
 
 void ChessVisApp::draw() {

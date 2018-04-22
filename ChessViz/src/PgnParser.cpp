@@ -33,7 +33,7 @@ void PgnParser::parse(const std::string& pgnFilename) {
     }
 }
 
-std::vector<ChessBoard> PgnParser::processGame(const pgn::Game& game) {
+std::vector<ChessBoard> PgnParser::processGame(const pgn::Game& game) const {
     auto chessBoards = std::vector<ChessBoard>{ChessBoard{}};
     chessBoards.back().setup();
 
@@ -43,9 +43,14 @@ std::vector<ChessBoard> PgnParser::processGame(const pgn::Game& game) {
         // take a copy of the most recent move from most recent game
         auto chessBoard = chessBoards.back();
 
-        // apply moves to the chessBoard state
+        // apply white move to the chessBoard state
         const auto whitePlay = move.white();
         processPlay(chessBoard, positions, whitePlay);
+
+        // add state back on to the list of games
+        chessBoards.push_back(chessBoard);
+
+        // apply black move to the chessBoard state
         const auto blackPlay = move.black();
         if (not blackPlay.valid()) { break; }  // game ends in a white move
         processPlay(chessBoard, positions, blackPlay);
@@ -58,13 +63,15 @@ std::vector<ChessBoard> PgnParser::processGame(const pgn::Game& game) {
 }
 
 void PgnParser::processPieceMove(ChessBoard& chessBoard,
-        const std::pair<size_t, size_t>& from, const std::pair<size_t, size_t>& to) {
+        const std::pair<size_t, size_t>& from,
+        const std::pair<size_t, size_t>& to) const {
     const auto cellContents = chessBoard.getCell(from.first, from.second);
     chessBoard.setCell(from.first, from.second, Cell::EMPTY);
     chessBoard.setCell(to.first, to.second, cellContents);
 }
 
-void PgnParser::processPlay(ChessBoard& chessBoard, pgn::Position& positions, pgn::Ply play) {
+void PgnParser::processPlay(ChessBoard& chessBoard,
+        pgn::Position& positions, pgn::Ply play) const {
     positions.update(play);
 
     // castling is a special case
@@ -111,7 +118,7 @@ void PgnParser::processPlay(ChessBoard& chessBoard, pgn::Position& positions, pg
     }
 }
 
-std::pair<size_t, size_t> PgnParser::getCoord(const pgn::Square& square) {
+std::pair<size_t, size_t> PgnParser::getCoord(const pgn::Square& square) const {
     const auto row = square.row();
     const auto col = square.col();
 
@@ -132,7 +139,7 @@ std::pair<size_t, size_t> PgnParser::getCoord(const pgn::Square& square) {
     return std::pair<int, int>{coordRow, coordCol};
 }
 
-ChessBoard& PgnParser::getBoardAt(size_t game, size_t move) {
+const ChessBoard& PgnParser::getBoardAt(size_t game, size_t move) const {
     return mGames.at(game).at(move);
 }
 
