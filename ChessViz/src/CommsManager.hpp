@@ -3,12 +3,15 @@
 #ifndef COMMSMANAGER_HPP
 #define COMMSMANAGER_HPP
 
+#include <functional>
 #include <string>
 #include <map>
 
 #include "cinder/Log.h"
 #include "cinder/osc/Osc.h"
 #include "cinder/Timeline.h"
+
+#include "ChessBoard.hpp"
 
 
 namespace chess {
@@ -24,9 +27,9 @@ public:
     CommsManager() :
         mReceiver{localPortReceive},
         mSender{localPortSend, destinationHost, destinationPort} {};
-    void setup();
+    void setup(const std::function<void()>& updateBoardCallback);
+    void updateBoard(const ChessBoard& chessBoard);
     void generateEvent();
-    bool isFilled() { return mIsFilled; }
 
 private:
     void onSendError(asio::error_code error);
@@ -36,7 +39,8 @@ private:
     const uint16_t destinationPort = 5556;
     const uint16_t localPortSend = 5557;
 
-    bool mIsFilled = false;
+    chess::ChessBoard mCurrentBoard;
+    std::function<void()> mUpdateBoardCallback;
 
     Receiver mReceiver;
     std::map<uint64_t, protocol::endpoint> mConnections;

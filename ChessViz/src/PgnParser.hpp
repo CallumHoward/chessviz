@@ -8,6 +8,9 @@
 
 #include <PGNGameCollection.h>
 #include <PGNPosition.h>
+#include <PGNPly.h>
+#include <PGNGame.h>
+#include <PGNSquare.h>
 
 #include "ChessBoard.hpp"
 

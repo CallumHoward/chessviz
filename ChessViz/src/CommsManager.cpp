@@ -9,16 +9,17 @@
 #include "cinder/Timeline.h"
 
 #include "CommsManager.hpp"
+#include "ChessBoard.hpp"
 
 
 namespace chess {
 
-void CommsManager::setup() {
+void CommsManager::setup(const std::function<void()>& updateBoardCallback) {
     // for /beat, 1 indicates even beat, 0 for odd beat as MaxMSP
     // is sending alternating 0s and 1s according to toggle object
     mReceiver.setListener("/beat",
             [&](const osc::Message &msg) {
-                mIsFilled = msg[0].int32();
+                //mIsFilled = msg[0].int32();  //TODO
                 generateEvent();
             });
 
@@ -58,6 +59,12 @@ void CommsManager::setup() {
     // Udp doesn't "connect" the same way Tcp does. If bind doesn't throw, we
     // can consider ourselves connected.
     mIsConnected = true;
+
+    mUpdateBoardCallback = updateBoardCallback;
+}
+
+void CommsManager::updateBoard(const ChessBoard& chessBoard) {
+    mCurrentBoard = chessBoard;
 }
 
 // generate random events to test with MaxMSP
@@ -66,23 +73,23 @@ void CommsManager::generateEvent() {
     if (!mIsConnected) { return; }
 
     // events: which piece moved, whether or not a capture happened
-    const auto pieces = std::vector<std::string>{
-            "queen", "king", "rook", "knight", "pawn", "bishop"};
-    int randomNum = rand() % pieces.size();
     const auto root = "/move";
-    bool isWhite = true;
-    bool isCapture = false;
+    bool isWhite = mCurrentBoard.getIsWhite();
+    bool isCapture = mCurrentBoard.getIsCaptured();
 
     osc::Message msg(root);
-    msg.append(pieces.at(randomNum));
-    msg.append(isWhite);
-    msg.append(isCapture);
+    //auto s = std::string{0, mCurrentBoard.getLastPieceMoved()};
+    msg.append(mCurrentBoard.getLastPieceMoved());
+    msg.append(static_cast<int>(isWhite));
+    msg.append(static_cast<int>(isCapture));
 
     // Send the msg and also provide an error handler. If the message is
     // important you could store it in the error callback to dispatch it again
     // if there was a problem.
     mSender.send(msg,
             std::bind(&CommsManager::onSendError, this, std::placeholders::_1));
+
+    mUpdateBoardCallback();
 }
 
 // Unified error handler. Easiest to have a bound function in this situation,

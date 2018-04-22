@@ -5,11 +5,11 @@
 			"major" : 7,
 			"minor" : 3,
 			"revision" : 5,
-			"architecture" : "x64",
+			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 26.0, 85.0, 1468.0, 713.0 ],
+		"rect" : [ 34.0, 56.0, 1372.0, 810.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,19 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-46",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 478.75, 449.333374, 40.0, 22.0 ],
+					"style" : "",
+					"text" : "itoa"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-6",
 					"maxclass" : "newobj",
@@ -286,7 +299,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 165.833313, 1471.0, 478.0, 34.0 ],
+					"patching_rect" : [ 165.833313, 1471.0, 478.0, 33.0 ],
 					"style" : "",
 					"text" : "read sound files into memory. Click replace to choose new file. This will\nnot be saved unless you update \"read/...\" with new filename"
 				}
@@ -300,7 +313,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 956.666626, 1548.0, 157.0, 36.0 ],
+					"patching_rect" : [ 956.666626, 1548.0, 157.0, 35.0 ],
 					"style" : "",
 					"text" : "read 802__bdu__closehatac.aiff"
 				}
@@ -314,7 +327,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 759.666626, 1542.5, 147.0, 50.0 ],
+					"patching_rect" : [ 759.666626, 1542.5, 147.0, 49.0 ],
 					"style" : "",
 					"text" : "read mpaol2023__4-tone-chime-up.wav"
 				}
@@ -328,7 +341,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 571.666626, 1548.0, 94.0, 50.0 ],
+					"patching_rect" : [ 571.666626, 1548.0, 94.0, 49.0 ],
 					"style" : "",
 					"text" : "read alexiero-1__ai-snare-20.wav"
 				}
@@ -342,7 +355,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 381.333313, 1542.5, 116.0, 50.0 ],
+					"patching_rect" : [ 381.333313, 1542.5, 116.0, 49.0 ],
 					"style" : "",
 					"text" : "read nabz871__dnb-kick-1.wav"
 				}
@@ -356,7 +369,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 187.333313, 1542.5, 108.0, 64.0 ],
+					"patching_rect" : [ 187.333313, 1542.5, 108.0, 62.0 ],
 					"style" : "",
 					"text" : "read eryps__snare-pitched-19102013.wav"
 				}
@@ -461,7 +474,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 936.666626, 1703.666626, 108.0, 36.0 ],
+					"patching_rect" : [ 936.666626, 1703.666626, 108.0, 35.0 ],
 					"style" : "",
 					"text" : "802__bdu__closehatac.aiff"
 				}
@@ -514,7 +527,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 729.666626, 1703.666626, 108.0, 36.0 ],
+					"patching_rect" : [ 729.666626, 1703.666626, 108.0, 35.0 ],
 					"style" : "",
 					"text" : "mpaol2023__4-tone-chime-up.wav"
 				}
@@ -567,7 +580,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 528.833313, 1703.666626, 108.0, 36.0 ],
+					"patching_rect" : [ 528.833313, 1703.666626, 108.0, 35.0 ],
 					"style" : "",
 					"text" : "alexiero-1__ai-snare-20.wav"
 				}
@@ -620,7 +633,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 349.833313, 1703.666626, 108.0, 36.0 ],
+					"patching_rect" : [ 349.833313, 1703.666626, 108.0, 35.0 ],
 					"style" : "",
 					"text" : "nabz871__dnb-kick-1.wav"
 				}
@@ -699,7 +712,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 165.833313, 1689.666626, 108.0, 50.0 ],
+					"patching_rect" : [ 165.833313, 1689.666626, 108.0, 49.0 ],
 					"style" : "",
 					"text" : "eryps__snare-pitched-19102013.wav"
 				}
@@ -846,7 +859,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 718.0, 18.0, 166.0, 62.0 ],
+					"patching_rect" : [ 718.0, 18.0, 166.0, 60.0 ],
 					"style" : "",
 					"text" : "Start here.\nAlso increase gain meters\nat the bottom as they are 0\nby default"
 				}
@@ -1084,7 +1097,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 190.666656, 214.666672, 89.0, 34.0 ],
+					"patching_rect" : [ 190.666656, 214.666672, 89.0, 33.0 ],
 					"style" : "",
 					"text" : "old random number test"
 				}
@@ -1399,9 +1412,9 @@
 					"numinlets" : 7,
 					"numoutlets" : 7,
 					"outlettype" : [ "bang", "bang", "bang", "bang", "bang", "bang", "" ],
-					"patching_rect" : [ 398.0, 473.666748, 221.0, 22.0 ],
+					"patching_rect" : [ 398.0, 473.666748, 97.0, 22.0 ],
 					"style" : "",
-					"text" : "sel king queen rook bishop knight pawn"
+					"text" : "sel K Q R B N P"
 				}
 
 			}
@@ -1453,7 +1466,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 543.166687, 430.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "pawn"
+					"text" : "80"
 				}
 
 			}
@@ -1476,10 +1489,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 4,
-					"outlettype" : [ "", "", "int", "int" ],
+					"outlettype" : [ "", "int", "int", "int" ],
 					"patching_rect" : [ 506.0, 375.666748, 120.0, 22.0 ],
 					"style" : "",
-					"text" : "unpack sym sym 0 0"
+					"text" : "unpack sym 0 0 0"
 				}
 
 			}
@@ -1616,9 +1629,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 487.333313, 96.0, 65.0, 22.0 ],
+					"patching_rect" : [ 487.333313, 96.0, 72.0, 22.0 ],
 					"style" : "",
-					"text" : "metro 200"
+					"text" : "metro 1000"
 				}
 
 			}
@@ -2131,6 +2144,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-192", 0 ],
+					"source" : [ "obj-46", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-48", 1 ],
 					"source" : [ "obj-47", 0 ]
 				}
@@ -2334,7 +2354,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-192", 0 ],
+					"destination" : [ "obj-46", 0 ],
 					"order" : 1,
 					"source" : [ "obj-64", 1 ]
 				}

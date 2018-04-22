@@ -1,5 +1,6 @@
 // chessVizApp.cpp
 
+#include <functional>
 #include <string>
 #include <vector>
 #include <stdexcept>
@@ -24,9 +25,10 @@ public:
     void setup() override;
     void update() override;
     void draw() override;
+    void advanceGame();
 
 private:
-    chrono::milliseconds mMoveDuration = std::chrono::milliseconds(20);
+    chrono::milliseconds mMoveDuration = std::chrono::milliseconds(1000);
     chrono::milliseconds mLastUpdate;
 
     std::string mPgnFilename = "games.pgn";
@@ -39,6 +41,8 @@ private:
     decltype(mPgnParser.cbegin()) mCurrentGame;
     decltype(mCurrentGame->cbegin()) mCurrentMove;
 
+    bool mIsReady = false;
+
     ch::Background mBackground;
     gl::TextureRef mImageBackground;
 };
@@ -49,7 +53,7 @@ void ChessVisApp::setup() {
         throw std::runtime_error("could not find pgn file: " + mPgnFilename);
     }
     mPgnParser.parse(mPgnFilePath);
-    mCommsManager.setup();
+    mCommsManager.setup(std::bind(&ChessVisApp::advanceGame, this));
     mFloatingBoard.setup();
 
     mBackground.setup(getWindowWidth(), getWindowHeight());
@@ -61,14 +65,13 @@ void ChessVisApp::setup() {
     mCurrentGame = mPgnParser.cbegin();
     mCurrentMove = mCurrentGame->cbegin();
 
-    const auto now = chrono::system_clock::now().time_since_epoch();
-    mLastUpdate = chrono::duration_cast<chrono::milliseconds>(now);
-    mFloatingBoard.update(*mCurrentMove);
+    //const auto now = chrono::system_clock::now().time_since_epoch();
+    //mLastUpdate = chrono::duration_cast<chrono::milliseconds>(now);
+    //mFloatingBoard.update(*mCurrentMove);
 }
 
-void ChessVisApp::update() {
-    const auto now = chrono::system_clock::now().time_since_epoch();
-    const auto nowMilliseconds = chrono::duration_cast<chrono::milliseconds>(now);
+void ChessVisApp::advanceGame() {
+    mIsReady = true;
 
     // loop through the games forever
     if (mCurrentGame == mPgnParser.cend()) {
@@ -76,23 +79,50 @@ void ChessVisApp::update() {
         mCurrentMove = mCurrentGame->cbegin();
     }
 
-    if (nowMilliseconds - mLastUpdate > mMoveDuration) {
-
-        if (mCurrentMove == mCurrentGame->cend()) {
-            // proceed to the next game
-            ++mCurrentGame;
-            if (mCurrentGame != mPgnParser.cend()) {
-                mCurrentMove = mCurrentGame->cbegin();
-            }
-
-        } else { //if (mCurrentMove != mCurrentGame->cend()) {
-            mFloatingBoard.update(*mCurrentMove);
-            mLastUpdate = nowMilliseconds;
-
-            // proceed to the next move
-            ++mCurrentMove;
+    if (mCurrentMove == mCurrentGame->cend()) {
+        // proceed to the next game
+        ++mCurrentGame;
+        if (mCurrentGame != mPgnParser.cend()) {
+            mCurrentMove = mCurrentGame->cbegin();
         }
+
+    } else { //if (mCurrentMove != mCurrentGame->cend()) {
+        mFloatingBoard.update(*mCurrentMove);
+        mCommsManager.updateBoard(*mCurrentMove);
+
+        // proceed to the next move
+        ++mCurrentMove;
     }
+}
+
+void ChessVisApp::update() {
+    //const auto now = chrono::system_clock::now().time_since_epoch();
+    //const auto nowMilliseconds = chrono::duration_cast<chrono::milliseconds>(now);
+
+    //// loop through the games forever
+    //if (mCurrentGame == mPgnParser.cend()) {
+    //    mCurrentGame = mPgnParser.cbegin();
+    //    mCurrentMove = mCurrentGame->cbegin();
+    //}
+
+    //if (nowMilliseconds - mLastUpdate > mMoveDuration) {
+
+    //    if (mCurrentMove == mCurrentGame->cend()) {
+    //        // proceed to the next game
+    //        ++mCurrentGame;
+    //        if (mCurrentGame != mPgnParser.cend()) {
+    //            mCurrentMove = mCurrentGame->cbegin();
+    //        }
+
+    //    } else { //if (mCurrentMove != mCurrentGame->cend()) {
+    //        mFloatingBoard.update(*mCurrentMove);
+    //        mCommsManager.updateBoard(*mCurrentMove);
+    //        mLastUpdate = nowMilliseconds;
+
+    //        // proceed to the next move
+    //        ++mCurrentMove;
+    //    }
+    //}
 }
 
 void ChessVisApp::draw() {
@@ -105,7 +135,7 @@ void ChessVisApp::draw() {
     gl::color(0.4f, 0.4f, 0.7f, 0.6f);
     mBackground.draw();
 
-    mFloatingBoard.draw();
+    if (mIsReady) { mFloatingBoard.draw(); }
 }
 
 auto settingsFunc = [](App::Settings *settings) {
@@ -113,7 +143,8 @@ auto settingsFunc = [](App::Settings *settings) {
     settings->setConsoleWindowEnabled();
 #endif
     settings->setMultiTouchEnabled(false);
-    settings->setFullScreen();
+    settings->setWindowSize(1280, 720);
+    //settings->setFullScreen();
 };
 
 CINDER_APP(ChessVisApp, RendererGl, settingsFunc)

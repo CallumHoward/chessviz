@@ -48,6 +48,7 @@ std::vector<ChessBoard> PgnParser::processGame(const pgn::Game& game) const {
         processPlay(chessBoard, positions, whitePlay);
 
         // add state back on to the list of games
+        chessBoard.setIsWhite(true);
         chessBoards.push_back(chessBoard);
 
         // apply black move to the chessBoard state
@@ -56,6 +57,7 @@ std::vector<ChessBoard> PgnParser::processGame(const pgn::Game& game) const {
         processPlay(chessBoard, positions, blackPlay);
 
         // add state back on to the list of games
+        chessBoard.setIsWhite(false);
         chessBoards.push_back(chessBoard);
     }
 
@@ -116,6 +118,9 @@ void PgnParser::processPlay(ChessBoard& chessBoard,
         const auto toCoord = getCoord(play.toSquare());
         processPieceMove(chessBoard, fromCoord, toCoord);
     }
+
+    chessBoard.setIsCaptured(play.isCapture());
+    chessBoard.setLastPlay(play);
 }
 
 std::pair<size_t, size_t> PgnParser::getCoord(const pgn::Square& square) const {

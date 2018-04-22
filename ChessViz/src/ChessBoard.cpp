@@ -1,6 +1,9 @@
 // ChessBoard.cpp
 
+#include <PGNPly.h>
+
 #include "ChessBoard.hpp"
+
 
 namespace chess {
 
@@ -10,10 +13,6 @@ void ChessBoard::setup() {
     reset();
 }
 
-void ChessBoard::draw() {
-
-}
-
 void ChessBoard::reset() {
     for (size_t c = 0; c < mBoard.at(0).size(); ++c) {
         mBoard[0][c] = W_PAWN;
@@ -21,6 +20,10 @@ void ChessBoard::reset() {
         mBoard[mBoardSize - 1][c] = B_PAWN;
         mBoard[mBoardSize - 2][c] = B_PAWN;
     }
+}
+
+char ChessBoard::getLastPieceMoved() const {
+    return mLastPlay.piece().letter();
 }
 
 } // namespace chess
