@@ -1,0 +1,12 @@
+[Result "0-1"]
+[Annotator ""]
+[Round ""]
+[Date "2017.12.01"]
+[PlyCount "134"]
+[Event ""]
+[Black "AlphaZero"]
+[Site ""]
+[White "Stockfish"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. d3 Bc5 5. Bxc6 dxc6 0-1
+

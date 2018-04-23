@@ -143,8 +143,8 @@ auto settingsFunc = [](App::Settings *settings) {
     settings->setConsoleWindowEnabled();
 #endif
     settings->setMultiTouchEnabled(false);
-    settings->setWindowSize(1280, 720);
-    //settings->setFullScreen();
+    //settings->setWindowSize(1280, 720);
+    settings->setFullScreen();
 };
 
 CINDER_APP(ChessVisApp, RendererGl, settingsFunc)
